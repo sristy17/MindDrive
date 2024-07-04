@@ -21,7 +21,7 @@ app.use('/auth', authRoutes);
 
 // Views
 app.get('/', (req, res) => {
-    res.render('../views/base');
+    res.render("../views/pages/index.ejs");
 })
 
 app.listen(PORT, () => {
