@@ -1,6 +1,7 @@
 import express from 'express'
 import bp from'body-parser'
 import authRoutes from "./routes/auth.routes.js"
+import geminiRoutes from "./routes/gemini.routes.js"
 import connectDatabase from './database/Mongo.database.js';
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(bp.urlencoded({extended: false}))
 
 // BE routes 
 app.use('/auth', authRoutes);
+app.use('/gemini', geminiRoutes);
 
 
 // Views
