@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="desktop-message">
-        This site is best viewed on a mobile de vice.
+        This site is best viewed on a mobile device.
     </div>
     <div class="content">
-        <h1>MIND DRIVE</h1>
-        <p>This is the homepage of the mobile-friendly application.</p>
-        <img src="/img/Img.jpeg" height="300" width="300" alt="no image">
-    </div>
+    <%- include('../includes/sidebar') %>
+        <div class="mood">
+            <h2>Your Mood !</h2>
+                <a href="/mood/1"><i class="bi bi-emoji-frown"></i></a>
+                <a href="/mood/2"><i class="bi bi-emoji-neutral"></i></a>
+                <a href="/mood/3"><i class="bi bi-emoji-smile"></i></a>
+                <a href="/mood/4"><i class="bi bi-emoji-laughing"></i></a>
+                <a href="/mood/5"><i class="bi bi-emoji-grin"></i></a>
     <%- include('../includes/navbar') %>
 </body>
 </html>

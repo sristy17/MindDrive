@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="desktop-message">
         This site is best viewed on a mobile device.
     </div>
     <div class="content">
-        <h1>About Us</h1>
-        <p>This is the about page of the mobile-friendly application.</p>
+    <%- include('../includes/sidebar') %>
+    <div class="main">
+        <h1>MIND DRIVE</h1>
+        <p> &nbsp; &nbsp;Welcome to Mind Drive, your dedicated companion on your journey towards mental well-being. Here, you'll find a supportive space designed to empower you with tools and resources to navigate life's challenges with resilience and positivity.
+<br> <br>
+&nbsp; &nbsp; Explore personalized pathways, engage in mindfulness practices, track your progress, and discover expert insights tailored to your needs. Whether you're seeking calm, clarity, or connection, Mind Drive is here to guide you every step of the way.
+<br><br>
+&nbsp; &nbsp; Together, let's drive towards a healthier mind and a brighter tomorrow.</p>
     </div>
+    <img src="/img/Img.jpeg" height="415" width="415" alt="no image">
     <%- include('../includes/navbar') %>
 </body>
 </html>

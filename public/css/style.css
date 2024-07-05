@@ -11,13 +11,13 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #333;
-  color: white;
+  background-color: #C7DCA7;
+  color: #3f3f3c;
   padding: 10px 0; 
 }
 
 .navbar a {
-  color: white;
+  color: #3f3f3c;
   text-decoration: none;
   padding: 10px;
   flex: 1;
@@ -41,6 +41,48 @@ body {
     text-align: center;
     margin-top: 50px;
     font-size: 1.5em;
-    color: #333;
+    color: #333530;
   }
 }
+.sidebar{
+  background-color: #C7DCA7;
+  color: #3f3f3c;
+  padding: 10px 0;
+  height: 1.55rem;
+  width: 100%;
+  top: 0;
+  position: fixed;
+;
+}
+.sidebar a {
+  color: #3f3f3c;
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+  padding:35px 20px;
+}
+.main{
+  padding: 15px;
+  margin-top: 20px;
+}
+.main p{
+  font-size: 1.5em;
+  color: #262724;
+  font-family: "Raleway", sans-serif;
+}
+.main h1{
+  font-family: "Playwrite IS", cursive;
+}
+.mood{
+  padding: 15px;
+  background-color: #FFEBD8;
+  margin-top: 20px;
+}
+ .mood h2{
+  font-family: "Playwrite IS", cursive;
+ }
+ .mood a{
+  color: #3f3f3c;
+  text-decoration: none;
+  padding: 20px;
+ }
