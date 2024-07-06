@@ -81,8 +81,16 @@ body {
  .mood h2{
   font-family: "Playwrite IS", cursive;
  }
- .mood a{
+ .mood button{
   color: #3f3f3c;
   text-decoration: none;
-  padding: 20px;
+  padding: 8px;
+  margin: 5px;
  }
+
+.mood a{
+  color: #3f3f3c;
+  text-decoration: none;
+  padding: 8px;
+  margin: 5px;
+}
