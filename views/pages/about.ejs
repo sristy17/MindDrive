@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind css cdn  -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <div class="desktop-message">
-        This site is best viewed on a mobile device.
+  <div class="desktop-message">
+    This site is best viewed on a mobile device.
+  </div>
+  <div class="sidebar bg-[#edf3dd]">
+    <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
+  </div>
+  <div class="main raleway px-6 pt-8 pb-24">
+    <div class="flex items-center justify-center py-6 text-3xl font-bold raleway">
+      Mind Drive
     </div>
-    <div class="content">
-    <%- include('../includes/sidebar') %>
-    <div class="main">
-        <h1>MIND DRIVE</h1>
-        <p> &nbsp; &nbsp;Welcome to Mind Drive, your dedicated companion on your journey towards mental well-being. Here, you'll find a supportive space designed to empower you with tools and resources to navigate life's challenges with resilience and positivity.
-<br> <br>
-&nbsp; &nbsp; Explore personalized pathways, engage in mindfulness practices, track your progress, and discover expert insights tailored to your needs. Whether you're seeking calm, clarity, or connection, Mind Drive is here to guide you every step of the way.
-<br><br>
-&nbsp; &nbsp; Together, let's drive towards a healthier mind and a brighter tomorrow.</p>
+    <div class="center">
+      <img class="w-2/3" src="/images/about-hero.png" alt="no image" />
     </div>
-    <img src="/img/Img.jpeg" height="415" width="415" alt="no image">
-    <%- include('../includes/navbar') %>
+    <div class="text-lg py-4 text-center">
+      <b>Welcome to Mind Drive</b>, <br />Your dedicated companion on your
+      journey towards mental well-being.
+    </div>
+    <div class="">
+      <span class="text-lg flex items-center font-bold justify-center py-2">What do you get here?</span>
+      <ul class="list-disc pl-4 py-4">
+        <li>Explore personalized pathways, engage in mindfulness practices.</li>
+        <li>
+          Track your progress, and discover expert insights tailored to your
+          needs.
+        </li>
+      </ul>
+
+      <div class="flex items-center justify-center">
+        Whether you're seeking calm, clarity, or connection, Mind Drive is here
+        to guide you every step of the way. Together, let's drive towards a
+        healthier mind and a brighter tomorrow.
+      </div>
+    </div>
+  </div>
+  <%- include('../includes/navbar') %>
 </body>
+
 </html>

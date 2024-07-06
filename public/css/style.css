@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+.raleway{
+  font-family: Raleway;
+}
+
 .center {
   display: flex;
   align-items: center;
@@ -23,6 +27,8 @@ body {
   background-color: #fff;
   color: #3f3f3c;
   padding: 10px 0;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
 }
 
 .navbar a {
@@ -80,7 +86,8 @@ body {
 }
 
 .main {
-  margin-top: 3rem;
+  overflow: scroll;
+  height: 100vh;
   background-color: #edf3dd;
 }
 
