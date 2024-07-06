@@ -4,16 +4,25 @@ body {
   padding: 0;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: fixed;
   bottom: 0;
+  -webkit-box-shadow: -7px -4px 64px -10px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: -7px -4px 64px -10px rgba(0, 0, 0, 0.49);
+  box-shadow: -7px -4px 64px -10px rgba(0, 0, 0, 0.49);
   width: 100%;
-  background-color: #C7DCA7;
+  background-color: #fff;
   color: #3f3f3c;
-  padding: 10px 0; 
+  padding: 10px 0;
 }
 
 .navbar a {
@@ -24,7 +33,7 @@ body {
   text-align: center;
 }
 
-/* Media Query for Mobile */ 
+/* Media Query for Mobile */
 @media only screen and (max-width: 451px) {
   .desktop-message {
     display: none;
@@ -33,9 +42,13 @@ body {
 
 /* Media Query for Desktop */
 @media only screen and (min-width: 450px) {
-  .content, .navbar, footer {
+
+  .content,
+  .navbar,
+  footer {
     display: none;
   }
+
   .desktop-message {
     display: block;
     text-align: center;
@@ -44,51 +57,61 @@ body {
     color: #333530;
   }
 }
-.sidebar{
-  background-color: #C7DCA7;
-  color: #3f3f3c;
-  padding: 10px 0;
-  height: 1.55rem;
+
+.sidebar {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: start;
   width: 100%;
   top: 0;
   position: fixed;
-;
+  ;
 }
+
 .sidebar a {
   color: #3f3f3c;
   text-decoration: none;
-  flex: 1;
+  display: flex;
+  padding-left: 1rem;
+  padding-top: 5px;
+  align-items: center;
   text-align: center;
-  padding:35px 20px;
 }
-.main{
-  padding: 15px;
-  margin-top: 20px;
+
+.main {
+  margin-top: 3rem;
+  background-color: #edf3dd;
 }
-.main p{
+
+.main p {
   font-size: 1.5em;
   color: #262724;
   font-family: "Raleway", sans-serif;
 }
-.main h1{
+
+/* .main h1 {
   font-family: "Playwrite IS", cursive;
-}
-.mood{
+} */
+
+.mood {
   padding: 15px;
   background-color: #FFEBD8;
   margin-top: 20px;
 }
- .mood h2{
+
+.mood h2 {
   font-family: "Playwrite IS", cursive;
- }
- .mood button{
+}
+
+.mood button {
   color: #3f3f3c;
   text-decoration: none;
   padding: 8px;
   margin: 5px;
- }
+}
 
-.mood a{
+.mood a {
   color: #3f3f3c;
   text-decoration: none;
   padding: 8px;
