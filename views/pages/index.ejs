@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-S3hDbi3...examplehash...0nNQ==" crossorigin="anonymous" />
 </head>
 <body>
     <div class="desktop-message">
@@ -22,20 +20,34 @@
         <div class="mood">
             <h2>Your Mood !</h2>
             <button>
-                <a href="/mood/1"><i class="bi bi-emoji-frown"></i></a><br>Sad
+                <a href="/mood/1">😔</a><br>Sad
             </button>
             <button>
-                <a href="/mood/2"><i class="bi bi-emoji-neutral"></i></a><br>Neutral
+                <a href="/mood/2">😐</a><br>Neutral
             </button>
             <button>
-                <a href="/mood/3"><i class="bi bi-emoji-smile"></i></a><br>Happy
+                <a href="/mood/3">🙂</a><br>Happy
             </button>
-                <button>
-                    <a href="/mood/4"><i class="bi bi-emoji-laughing"></i></a><br>Joyful
-                </button>
-                <button>
-                    <a href="/mood/5"><i class="bi bi-emoji-grin"></i></a><br>Excited
-                </button>
+             <button>
+                <a href="/mood/4">😊</a><br>Joyful
+            </button>
+            <button>
+                <a href="/mood/5">😄</a><br>Excited
+           </button>
+              </div>
+              <div class="features">
+                <h2>Features</h2>
+            <div class="anxiety">
+               <h2 class="feat-h">Anxiety</h2>
+               <a class="feat-a" href=""><i class="fa-solid fa-circle-play fa-2x"></i></a>
+               <p class="feat-p">Learning relaxation techniques can help you with the mental and physical feelings of fear.</p>
+            </div>
+            <div class="depression">
+                <h2 class="feat-h">Depression</h2>
+                <a class="feat-a" href=""><i class="fa-solid fa-circle-play fa-2x"></i></a>
+                <p class="feat-p">Maybe it is not about having a beautiful day, but about finding beautiful moments. Maybe a whole day is just too much to ask. I could choose to believe that in every day, in all things, no matter how dark and ugly, there are shards of beauty if I look for them.</p>
+             </div>
+                
               </div>
                
     <%- include('../includes/navbar') %>

@@ -97,18 +97,15 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-/* .main h1 {
-  font-family: "Playwrite IS", cursive;
-} */
+.mood h2{
+margin-top: 27px;
+font-family: "Raleway", sans-serif;
+}
 
 .mood {
   padding: 15px;
-  background-color: #FFEBD8;
-  margin-top: 20px;
-}
-
-.mood h2 {
-  font-family: "Playwrite IS", cursive;
+  margin-top: 25px;
+  border-radius: 10px;
 }
 
 .mood button {
@@ -116,6 +113,8 @@ body {
   text-decoration: none;
   padding: 8px;
   margin: 5px;
+  border-radius: 7px;
+  border: none;
 }
 
 .mood a {
@@ -124,3 +123,39 @@ body {
   padding: 8px;
   margin: 5px;
 }
+.anxiety{
+  background-image: url("../images/Bg1.png");
+  background-repeat: no-repeat;
+  background-image: cover;
+  height: 400px; 
+  width: 100%; 
+  text-align: left;
+  border-radius: 50px;
+}
+.depression{
+  background-image: url("../images/Bg2.png");
+  background-repeat: no-repeat;
+  background-image: cover;
+  height: 400px; 
+  width: 100%; 
+  text-align: left;
+  border-radius: 50px;
+}
+
+.feat-h{
+  padding: 50px 50px 10px;
+}
+.feat-p{
+  padding: 20px 30px  0px;
+  font-size: 1.5em;
+  color: #262724;
+  font-family: "Raleway", sans-serif;
+}
+.feat-a{
+  text-decoration: none !important;
+  margin: 50px;
+  padding: 20px 30px  0px;
+}
+
+
+  
