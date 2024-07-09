@@ -97,6 +97,11 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+.intro{
+padding: 55px 0px 0px 0px;
+text-align: center;
+}
+
 .mood h2{
 margin-top: 27px;
 font-family: "Raleway", sans-serif;
@@ -104,7 +109,6 @@ font-family: "Raleway", sans-serif;
 
 .mood {
   padding: 15px;
-  margin-top: 25px;
   border-radius: 10px;
 }
 
@@ -123,6 +127,7 @@ font-family: "Raleway", sans-serif;
   padding: 8px;
   margin: 5px;
 }
+
 .anxiety{
   background-image: url("../images/Bg1.png");
   background-repeat: no-repeat;
