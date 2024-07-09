@@ -136,7 +136,25 @@ font-family: "Raleway", sans-serif;
   background-image: url("../images/Bg2.png");
   background-repeat: no-repeat;
   background-image: cover;
-  height: 400px; 
+  height: 500px; 
+  width: 100%; 
+  text-align: left;
+  border-radius: 50px;
+}
+.stress{
+  background-image: url("../images/Bg3.png");
+  background-repeat: no-repeat;
+  background-image: cover;
+  height: 500px; 
+  width: 100%; 
+  text-align: left;
+  border-radius: 50px;
+}
+.ptsd{
+  background-image: url("../images//Bg4.png");
+  background-repeat: no-repeat;
+  background-image: cover;
+  height: 500px; 
   width: 100%; 
   text-align: left;
   border-radius: 50px;
