@@ -93,4 +93,37 @@ const getTasks = async (req, res) => {
   }
 }
 
-export { trackMood, getTasks };
+const botresponse = async (req, res) => {
+  try {
+    const { message } = req.body;
+    console.log(message)
+    if (!message) {
+      return res.status(400).json({ error: 'Message value is required' });
+    }
+
+    const requestData = {
+      contents: [
+        {
+          parts: [
+            {
+              text: message
+            }
+          ]
+        }
+      ]
+    };
+
+    const response = await axios.post(`${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`, requestData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    res.json(response.data.candidates[0].content.parts[0].text);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred while fetching the diagnosis' });
+  }
+}
+
+export { trackMood, getTasks, botresponse };

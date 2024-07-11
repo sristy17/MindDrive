@@ -29,6 +29,10 @@ app.get('/about', (req, res) => {
     res.render('pages/about');
 });
 
+app.get('/chatbot', (req, res) => {
+    res.render('pages/chatbot');
+});
+
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
     connectDatabase();
