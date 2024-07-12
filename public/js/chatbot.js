@@ -100,6 +100,7 @@ const botmessage = async (message, timeAgo) => {
 
     document.getElementById('message-container').appendChild(container);
 }
+    botmessage("Hi", '2 mins ago');
 
 sendBtn.addEventListener('click', () => {
 
