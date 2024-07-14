@@ -33,6 +33,10 @@ app.get('/chatbot', (req, res) => {
     res.render('pages/chatbot');
 });
 
+app.get('/profile', (req, res) => {
+    res.render('pages/profile');
+});
+
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
     connectDatabase();

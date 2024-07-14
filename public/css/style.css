@@ -373,8 +373,9 @@ body {
 }
 
 .intro{
-padding: 55px 0px 0px 0px;
+padding: 50px 5px 0px;
 text-align: center;
+margin-top: 30px;
 }
 
 .mood h2{
@@ -438,6 +439,7 @@ font-family: "Raleway", sans-serif;
   width: 100%; 
   text-align: left;
   border-radius: 50px;
+  margin-bottom: 150px;
 }
 
 .feat-h{
@@ -487,4 +489,9 @@ textarea:focus, input:focus{
 }
 @keyframes l4 {
     to{width:25px;aspect-ratio: 1}
+}
+
+.info{
+  margin-left: 120px;
+  margin-top: 50px;
 }
