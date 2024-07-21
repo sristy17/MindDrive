@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,98 +9,150 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-S3hDbi3...examplehash...0nNQ==" crossorigin="anonymous" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-S3hDbi3...examplehash...0nNQ==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/css/modal.css">
+
+    <!-- Tailwind css cdn  -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <div class="desktop-message">
-        <div class="card">
+    <div class="desktop-message md:h-screen md:flex md:flex-col md:justify-center md:items-center hidden">
+        <div class="card" style="margin: 0;">
             This site is best viewed on a mobile device.
-          </div>
-        <div class="bo">
-            <div class="face">     <div class="earL"></div>
-                  <div class="earR"></div>
-                  <div class="eyeL"></div>
-                  <div class="eyeR"></div>
-                  <div class="hairs"></div>
-                  <div class="nose"></div>
-                  <div class="mouth"></div>
-                   <div class="smileL">
-                   <svg xml:space="preserve" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
-                   <filter id="blurMe">
-               <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
-             </filter>
-             <path d="M25 19c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-               <path d="M35 35c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-                 <path d="M45 50c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-           </svg>
-                   </div>
-                    <div class="smileR">
-                     <svg xml:space="preserve" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
-                   <filter id="blurMe">
-               <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
-             </filter>
-             <path d="M25 19c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-               <path d="M35 35c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-                 <path d="M45 50c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-           </svg></div>
-             
-           <div class="snow">
-           <div class="mountain-cap-1"></div>
-                 <div class="mountain-cap-2"></div>
-                 <div class="mountain-cap-3"></div>
-                 <div class="mountain-cap-4"></div>
-                 <div>
-           </div>
-           </div>
-           </div></div>
+        </div>
+        <div class="bo flex items-center justify-between">
+            <div class="face">
+                <div class="earL"></div>
+                <div class="earR"></div>
+                <div class="eyeL"></div>
+                <div class="eyeR"></div>
+                <div class="hairs"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+                <div class="smileL">
+                    <svg xml:space="preserve" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
+                        <filter id="blurMe">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
+                        </filter>
+                        <path
+                            d="M25 19c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z"
+                            fill="#EF7F71" filter="url(#blurMe)"></path>
+                        <path
+                            d="M35 35c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z"
+                            fill="#EF7F71" filter="url(#blurMe)"></path>
+                        <path
+                            d="M45 50c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z"
+                            fill="#EF7F71" filter="url(#blurMe)"></path>
+                    </svg>
+                </div>
+                <div class="smileR">
+                    <svg xml:space="preserve" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
+                        <filter id="blurMe">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
+                        </filter>
+                        <path
+                            d="M25 19c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z"
+                            fill="#EF7F71" filter="url(#blurMe)"></path>
+                        <path
+                            d="M35 35c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z"
+                            fill="#EF7F71" filter="url(#blurMe)"></path>
+                        <path
+                            d="M45 50c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z"
+                            fill="#EF7F71" filter="url(#blurMe)"></path>
+                    </svg>
+                </div>
+
+                <div class="snow">
+                    <div class="mountain-cap-1"></div>
+                    <div class="mountain-cap-2"></div>
+                    <div class="mountain-cap-3"></div>
+                    <div class="mountain-cap-4"></div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="content">
-    <%- include('../includes/sidebar') %>
-    <div class="intro">
-        <h2>Navigate Your Mental Health Journey Here!</h2>
-    </div>
-        <div class="mood">
-            <h2>Your Mood !</h2>
-            <button>
-                <a href="/mood/1">😔</a><br>Sad
-            </button>
-            <button>
-                <a href="/mood/2">😐</a><br>Neutral
-            </button>
-            <button>
-                <a href="/mood/3">🙂</a><br>Happy
-            </button>
-             <button>
-                <a href="/mood/4">😊</a><br>Joyful
-            </button>
-            <button>
-                <a href="/mood/5">😄</a><br>Excited
-           </button>
-              </div>
-              <div class="features">
-                <h2 style="padding-left: 20px;">Features</h2>
-            <div class="anxiety">
-               <h2 class="feat-h">Anxiety</h2>
-               <a class="feat-a" href="https://youtu.be/dknTQktH5Z0"><i class="fa-solid fa-circle-play fa-2x"></i></a>
-               <p class="feat-p">Learning relaxation techniques can help you with the mental and physical feelings of fear.</p>
+        <%- include('../includes/sidebar') %>
+            <div class="intro">
+                <h2 class="font-bold raleway">Navigate Your Mental Health Journey Here!</h2>
             </div>
-            <div class="depression">
-                <h2 class="feat-h">Depression</h2>
-                <a class="feat-a" href="https://youtu.be/V6ui161NyTg?si=zttsvjc-0EeTIa0d"><i class="fa-solid fa-circle-play fa-2x"></i></a>
-                <p class="feat-p">Learning relaxation techniques can ease the mental and physical symptoms of depression.</p>
+            <div class="mood justify-center items-center flex flex-col">
+                <h2>How do you feel today?</h2>
+                <div>
+
+                    <button class="mood-btn" data-mood="1">
+                        😔<br>Sad
+                    </button>
+                    <button class="mood-btn" data-mood="2">
+                        😐<br>Neutral
+                    </button>
+                    <button class="mood-btn" data-mood="3">
+                        🙂<br>Happy
+                    </button>
+                    <button class="mood-btn" data-mood="4">
+                        😊<br>Joyful
+                    </button>
+                    <button class="mood-btn" data-mood="5">
+                        😄<br>Excited
+                    </button>
+                </div>
+                    <div class="flex items-center justify-center">
+                        <span class="loader hidden" id="loader"></span>
+                    </div>
+                <div class="modal hidden" id="mood-modal">
+                    <div class="modal">
+                        <p class="message" id="moodtext"></p>
+                        <div class="options">
+                            <button class="btn" id="closebtn">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="stress">
-                <h2 class="feat-h">Stress</h2>
-                <a class="feat-a" href="https://youtu.be/xdqNEWb3VfA?si=QQJIoiX89sxXQSCm"><i class="fa-solid fa-circle-play fa-2x"></i></a>
-                <p class="feat-p"> Practicing relaxation techniques can reduce stress and restore balance in life.</p>
-            </div>
-            <div class="ptsd">
-                <h2 class="feat-h">Post-traumatic stress disorder </h2>
-                <a class="feat-a" href="https://youtu.be/lwq_KFTiJ78?si=Eh3E6Ba7_HPCEmBy"><i class="fa-solid fa-circle-play fa-2x"></i></a>
-                <p class="feat-p">Learning relaxation techniques can help manage symptoms and improve coping with PTSD.</p>
-            </div>
-      
-    <%- include('../includes/navbar') %>
+            <div class="features">
+                <h2 class="font-bold text-lg my-6" style="padding-left: 20px;">Features</h2>
+                <div class="anxiety">
+                    <h2 class="feat-h">Anxiety</h2>
+                    <a class="feat-a" href="https://youtu.be/dknTQktH5Z0"><i
+                            class="fa-solid fa-circle-play fa-2x"></i></a>
+                    <p class="feat-p">Learning relaxation techniques can help you with the mental and physical feelings
+                        of fear.</p>
+                </div>
+                <div class="depression">
+                    <h2 class="feat-h">Depression</h2>
+                    <a class="feat-a" href="https://youtu.be/V6ui161NyTg?si=zttsvjc-0EeTIa0d"><i
+                            class="fa-solid fa-circle-play fa-2x"></i></a>
+                    <p class="feat-p">Learning relaxation techniques can ease the mental and physical symptoms of
+                        depression.</p>
+                </div>
+                <div class="stress">
+                    <h2 class="feat-h">Stress</h2>
+                    <a class="feat-a" href="https://youtu.be/xdqNEWb3VfA?si=QQJIoiX89sxXQSCm"><i
+                            class="fa-solid fa-circle-play fa-2x"></i></a>
+                    <p class="feat-p"> Practicing relaxation techniques can reduce stress and restore balance in life.
+                    </p>
+                </div>
+                <div class="ptsd">
+                    <h2 class="feat-h">Post-traumatic stress disorder </h2>
+                    <a class="feat-a" href="https://youtu.be/lwq_KFTiJ78?si=Eh3E6Ba7_HPCEmBy"><i
+                            class="fa-solid fa-circle-play fa-2x"></i></a>
+                    <p class="feat-p">Learning relaxation techniques can help manage symptoms and improve coping with
+                        PTSD.</p>
+                </div>
+
+                <%- include('../includes/navbar') %>
 </body>
+<script src="/js/global.js"></script>
 </html>

@@ -363,7 +363,6 @@ body {
 .main {
   overflow: scroll;
   height: 100vh;
-  background-color: #edf3dd;
 }
 
 .main p {
@@ -384,7 +383,7 @@ font-family: "Raleway", sans-serif;
 }
 
 .mood {
-  padding: 15px;
+  padding: 8px;
   border-radius: 10px;
 }
 

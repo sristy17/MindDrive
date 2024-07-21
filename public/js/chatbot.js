@@ -4,7 +4,7 @@ var loader = document.getElementById('loader');
 
 var user = { message: "" };
 
-    const fetchBotResponse = async (message) => {
+const fetchBotResponse = async (message) => {
     try {
         const params = new URLSearchParams();
         params.append('message', message);
@@ -28,12 +28,12 @@ var user = { message: "" };
     }
 }
 
-    const formatTime = (date) => {
+const formatTime = (date) => {
     const options = { hour: 'numeric', minute: '2-digit' };
     return new Intl.DateTimeFormat('en-US', options).format(date);
 }
 
-    const sendMessage = async (message) => {
+const sendMessage = async (message) => {
     const container = createMessageContainer('flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end');
 
     const innerDiv = document.createElement('div');
@@ -58,7 +58,7 @@ var user = { message: "" };
     document.getElementById('message-container').appendChild(container);
 }
 
-    const botmessage = async (message) => {
+const botmessage = async (message) => {
     const container = createMessageContainer('flex w-full mt-2 space-x-3 max-w-xs');
 
     const avatarDiv = document.createElement('div');
@@ -94,26 +94,26 @@ var user = { message: "" };
     document.getElementById('message-container').appendChild(container);
 }
 
-    const createMessageContainer = (className) => {
+const createMessageContainer = (className) => {
     const container = document.createElement('div');
     container.className = className;
     return container;
 }
 
-    const createMessageDiv = (className) => {
+const createMessageDiv = (className) => {
     const messageDiv = document.createElement('div');
     messageDiv.className = className;
     return messageDiv;
 }
 
-    const createTimestampSpan = (text) => {
+const createTimestampSpan = (text) => {
     const timeSpan = document.createElement('span');
     timeSpan.className = 'text-xs text-gray-500 leading-none';
     timeSpan.textContent = text;
     return timeSpan;
 }
 
-    const createAvatarImg = (className, src) => {
+const createAvatarImg = (className, src) => {
     const avatarImg = document.createElement('img');
     avatarImg.className = className;
     avatarImg.src = src;
@@ -121,9 +121,9 @@ var user = { message: "" };
     return avatarImg;
 }
 
-    botmessage("Hi");
+botmessage("Hi");
 
-    sendBtn.addEventListener('click', () => {
+sendBtn.addEventListener('click', () => {
     var userMessage = inputbox.value;
     if (!userMessage || userMessage === '') {
         alert("Message shouldn't be empty!");
