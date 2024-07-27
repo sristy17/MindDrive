@@ -42,9 +42,7 @@ body {
 /* Media Query for Desktop */
 @media only screen and (max-width: 451px) {
   .desktop-message {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
   }
 }
 .card1{
