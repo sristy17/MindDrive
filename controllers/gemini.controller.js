@@ -106,7 +106,7 @@ const botresponse = async (req, res) => {
         {
           parts: [
             {
-              text: message
+              text: `Restrict responses to mental health related questions only. For any other query, respond with "Please ask me a mental health related question, I am sworn to serve MindDrive.". Here is my question : ${message}`
             }
           ]
         }
