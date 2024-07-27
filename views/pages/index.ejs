@@ -92,27 +92,36 @@
                 <div>
 
                     <button class="mood-btn" data-mood="1">
-                        😔<br>Sad
+                        <img src="/images/emojis/sad.png" height="45" width="45" alt=""><br>Sad
                     </button>
                     <button class="mood-btn" data-mood="2">
-                        😐<br>Neutral
+                        <img src="/images/emojis/neutral.png" height="45" width="45" alt=""><br>Neutral
                     </button>
                     <button class="mood-btn" data-mood="3">
-                        🙂<br>Happy
+                        <img src="/images/emojis/happy.png" height="45" width="45" alt="">
+                        <br>Happy
                     </button>
                     <button class="mood-btn" data-mood="4">
-                        😊<br>Joyful
+                        <img src="https://banner2.cleanpng.com/20240329/uz/transparent-cute-emoji-cartoon-smiley-face-with-tongue-out6606c458a74191.91054447.webp"
+                            height="45" width="45" alt="">
+                        <br>Joyful
                     </button>
                     <button class="mood-btn" data-mood="5">
-                        😄<br>Excited
+                        <img src="/images/emojis/excited.png" height="45" width="45" alt="">
+                        <br>Excited
                     </button>
                 </div>
-                    <div class="flex items-center justify-center">
-                        <span class="loader hidden" id="loader"></span>
-                    </div>
+                <div class="flex items-center justify-center">
+                    <span class="loader hidden" id="loader"></span>
+                </div>
                 <div class="modal hidden" id="mood-modal">
                     <div class="modal">
                         <p class="message" id="moodtext"></p>
+
+                        <div id="get-activity" style="cursor: pointer; text-decoration: underline;">
+                            Wanna do some activities to cheer up? Click here
+                        </div>
+
                         <div class="options">
                             <button class="btn" id="closebtn">Close</button>
                         </div>
@@ -121,38 +130,61 @@
 
 
             </div>
-            <div class="features">
-                <h2 class="font-bold text-lg my-6" style="padding-left: 20px;">Features</h2>
-                <div class="anxiety">
-                    <h2 class="feat-h">Anxiety</h2>
-                    <a class="feat-a" href="https://youtu.be/dknTQktH5Z0"><i
-                            class="fa-solid fa-circle-play fa-2x"></i></a>
+            <div class="features items-center">
+
+                <h2 class="text-xl my-4 text-center font-bold" style="padding-left: 20px;">Features</h2>
+
+                <div class="anxiety flex flex-col items-center pt-6">
+                    <span class="text-xl my-2 font-bold">Anxiety</span>
+                    <iframe style="border-radius: 25px; height: 200px; width: 350px " className="rounded-3xl pt-8"
+                        src="https://www.youtube.com/embed/dknTQktH5Z0" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                     <p class="feat-p">Learning relaxation techniques can help you with the mental and physical feelings
                         of fear.</p>
                 </div>
-                <div class="depression">
-                    <h2 class="feat-h">Depression</h2>
-                    <a class="feat-a" href="https://youtu.be/V6ui161NyTg?si=zttsvjc-0EeTIa0d"><i
-                            class="fa-solid fa-circle-play fa-2x"></i></a>
+
+
+
+                <div class="anxiety flex flex-col items-center pt-6">
+                    <span class="text-xl my-2 font-bold">Depression</span>
+                    <iframe style="border-radius: 25px; height: 200px; width: 350px " className="rounded-3xl pt-8"
+                        src="https://www.youtube.com/embed/V6ui161NyTg?si=zttsvjc-0EeTIa0d" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                     <p class="feat-p">Learning relaxation techniques can ease the mental and physical symptoms of
                         depression.</p>
                 </div>
-                <div class="stress">
-                    <h2 class="feat-h">Stress</h2>
-                    <a class="feat-a" href="https://youtu.be/xdqNEWb3VfA?si=QQJIoiX89sxXQSCm"><i
-                            class="fa-solid fa-circle-play fa-2x"></i></a>
-                    <p class="feat-p"> Practicing relaxation techniques can reduce stress and restore balance in life.
+
+
+                <div class="anxiety flex flex-col items-center pt-6">
+                    <span class="text-xl my-2 font-bold">Stress</span>
+                    <iframe style="border-radius: 25px; height: 200px; width: 350px " className="rounded-3xl pt-8"
+                        src="https://www.youtube.com/embed/xdqNEWb3VfA?si=QQJIoiX89sxXQSCm" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                    <p class="feat-p">Practicing relaxation techniques can reduce stress and restore balance in life.
                     </p>
                 </div>
-                <div class="ptsd">
-                    <h2 class="feat-h">Post-traumatic stress disorder </h2>
-                    <a class="feat-a" href="https://youtu.be/lwq_KFTiJ78?si=Eh3E6Ba7_HPCEmBy"><i
-                            class="fa-solid fa-circle-play fa-2x"></i></a>
+
+
+                <div class="anxiety flex flex-col items-center pt-6">
+                    <span class="text-xl my-2 font-bold">Post-traumatic stress disorder </span>
+                    <iframe style="border-radius: 25px; height: 200px; width: 350px " className="rounded-3xl pt-8"
+                        src="https://www.youtube.com/embed/lwq_KFTiJ78?si=Eh3E6Ba7_HPCEmBy" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                     <p class="feat-p">Learning relaxation techniques can help manage symptoms and improve coping with
                         PTSD.</p>
+                </div>
+
+                <div class="text-sm items-center justify-center flex flex-col mb-24">
+                    Copyright © 2024. All rights reserved.
+                    <br>Sristy Paul & Pooranjoy Bhattacharya
                 </div>
 
                 <%- include('../includes/navbar') %>
 </body>
 <script src="/js/global.js"></script>
+
 </html>

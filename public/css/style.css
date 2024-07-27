@@ -407,7 +407,7 @@ font-family: "Raleway", sans-serif;
   background-image: url("../images/Bg1.png");
   background-repeat: no-repeat;
   background-image: cover;
-  height: 300px; 
+  height: 390px; 
   width: 100%; 
   text-align: left;
   border-radius: 50px;
@@ -446,7 +446,7 @@ font-family: "Raleway", sans-serif;
 }
 .feat-p{
   padding: 20px 30px  0px;
-  font-size: 1.5em;
+  font-size: 1em;
   color: #262724;
   font-family: "Raleway", sans-serif;
 }

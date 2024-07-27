@@ -73,7 +73,7 @@ const getTasks = async (req, res) => {
         {
           parts: [
             {
-              text: `Today I'm in ${mood} mood, Generate 5 tasks that I can do according to my mood to improve them.`
+              text: `Today I'm in ${mood} mood, Generate 3 tasks that I can do according to my mood to improve them. Just 1 line each tasks. Give them in HTML paragram tags so that i can directly render them in webpage. No need to write entire html only 3 <p> tags with content.`
             }
           ]
         }
