@@ -1,5 +1,8 @@
 # MindDrive - AI Powered Mental Wellbeing PWA
 
+![image](https://github.com/user-attachments/assets/0009fce9-3865-412a-b867-1022f1ef06ec)
+
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -112,7 +115,6 @@ MindDrive/
 ├── package-lock.json
 └── package.json
 ```
-
 
 ## License
 
