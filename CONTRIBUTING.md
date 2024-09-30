@@ -19,16 +19,18 @@ git clone https://github.com/sristy17/MindDrive.git
 npm install
 ```
 
-()
 - Add an `.env` file in the root directory.
 ```bash
-DB_USER=<mongodb-db-user>
-DB_PASSWORD=<db-password>
-DB_APPNAME=<db-appname>
+DB_USER=hacktoberfest
+DB_PASSWORD=hacktoberfest
+DB_APPNAME=dev-db
 
 GEMINI_API_ENDPOINT=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent
 GEMINI_API_KEY=<gemini-api-key>
 ```
+#### _(Get your Gemini API key from [here](https://aistudio.google.com/app/apikey))_
+
+
 
 - Start the application
 ```bash
