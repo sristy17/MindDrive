@@ -349,6 +349,7 @@ textarea:focus, input:focus{
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.49);
   cursor: pointer;
+  transition: box-shadow 0.1s;
 }
 
 #progress-value{
@@ -361,6 +362,17 @@ textarea:focus, input:focus{
   place-items: center;
   font-size: 35px;
 }
+
+#progress:hover{
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.49);
+}
+
+#progress:active{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.49);
+  opacity: 100%;
+}
+
+
 
 
 @keyframes bounce {
