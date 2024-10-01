@@ -167,6 +167,10 @@ html {
     display: none;
   }
 
+  #progress-value{
+    font-size: 32px;
+  }
+
   .desktop-message {
     display: flex;
     align-items: center;
@@ -333,6 +337,31 @@ textarea:focus, input:focus{
 .arrow {
   animation: bounce 2s infinite;
 }
+
+#progress{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 70px;
+  width: 70px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.49);
+  cursor: pointer;
+}
+
+#progress-value{
+  display: block;
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+}
+
 
 @keyframes bounce {
   0%, 100% {
