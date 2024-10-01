@@ -42,7 +42,7 @@ html {
   justify-content: center;
 }
 
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -65,9 +65,25 @@ html {
   padding: 10px;
   flex: 1;
   text-align: center;
+} */
+nav {
+  position: relative;
+  z-index: 10; 
+ 
 }
 
-/* Media Query for Desktop */
+nav a {
+  font-size: 1.15rem; /* Increase font size */
+  padding: 15px 20px; /* Increase padding for links */
+  font-weight: 200; /* Slightly bolder links */
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffeb3b; /* Change to a bright color on hover */
+}
+
+
 @media only screen and (max-width: 451px) {
   .desktop-message {
     display: none;
