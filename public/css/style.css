@@ -167,10 +167,6 @@ html {
     display: none;
   }
 
-  #progress-value{
-    font-size: 32px;
-  }
-
   .desktop-message {
     display: flex;
     align-items: center;
@@ -361,6 +357,43 @@ textarea:focus, input:focus{
   display: grid;
   place-items: center;
   font-size: 35px;
+}
+
+#scroll{
+  background-color: #7C3AED;
+  position: fixed;
+  bottom: 80px;
+  right: 22px;
+  height: 70px;
+  width: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.49);
+  cursor: pointer;
+  transition: box-shadow 0.1s;
+}
+
+#scroll-value{
+  display: block;
+  height: 52px;
+  width: 52px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  display: grid;
+  place-items: center;
+  color: #001a2e;
+  font-size: 35px;
+}
+
+#scroll:hover{
+  box-sizing: 0 0 15px rgba(0, 0, 0, 0.49);
+}
+
+#scroll:active{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.49);
+  opacity: 100%;
 }
 
 #progress:hover{
