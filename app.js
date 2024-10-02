@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.use(bp.json());
-app.use(bp.urlencoded({ extended: false }));
+app.use(bp.urlencoded({ extended: true }));
 
 // BE routes
 app.use('/auth', authRoutes);
@@ -36,6 +36,10 @@ app.get('/chatbot', (req, res) => {
 app.get('/profile', (req, res) => {
     res.render('pages/profile');
 });
+
+app.get('/signup',(_,res) => {
+    res.render('pages/Signup')
+})
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
