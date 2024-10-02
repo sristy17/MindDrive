@@ -18,28 +18,7 @@
 
   <!-- Tailwind css cdn  -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Optional styles for light and dark themes */
-    body.light-theme {
-      background-color: #ffffff;
-      color: #000000;
-    }
 
-    body.dark-theme {
-      background-color: #1a202c;
-      color: #ffffff;
-    }
-
-    .desktop-message {
-      display: none; /* Hide the desktop message by default */
-    }
-
-    @media (min-width: 768px) {
-      .desktop-message {
-        display: block; /* Show on larger screens */
-      }
-    }
-  </style>
 </head>
 
 <body class="light-theme" id="body">
@@ -85,22 +64,9 @@
 
   <%- include('../includes/navbar') %>
 
-  <script>
-    const body = document.getElementById('body');
-    const button = document.getElementById('theme-toggle');
 
-    button.addEventListener('click', () => {
-      if (body.classList.contains('light-theme')) {
-        body.classList.remove('light-theme');
-        body.classList.add('dark-theme');
-        button.innerHTML = '<i class="fas fa-sun"></i>'; // Change icon for dark theme
-      } else {
-        body.classList.remove('dark-theme');
-        body.classList.add('light-theme');
-        button.innerHTML = '<i class="fas fa-moon"></i>'; // Change icon for light theme
-      }
-    });
-  </script>
 </body>
+
+<script src="/js/about.js"></script>
 
 </html>

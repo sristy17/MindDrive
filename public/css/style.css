@@ -365,3 +365,25 @@ textarea:focus, input:focus{
     transform: translateY(-20px); /* Adjust the distance as needed */
   }
 }
+
+
+body.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-theme {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+.desktop-message {
+  display: none; /* Hide the desktop message by default */
+}
+
+@media (min-width: 768px) {
+  .desktop-message {
+    display: block; /* Show on larger screens */
+  }
+}
+

@@ -19,28 +19,7 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-  <style>
-    /* Optional styles for light and dark themes */
-    body.light-theme {
-      background-color: #ffffff;
-      color: #000000;
-    }
 
-    body.dark-theme {
-      background-color: #1a202c;
-      color: #ffffff;
-    }
-
-    .desktop-message {
-      display: none; /* Hide the desktop message by default */
-    }
-
-    @media (min-width: 768px) {
-      .desktop-message {
-        display: block; /* Show on larger screens */
-      }
-    }
-  </style>
 </head>
 
 <body class="light-theme" id="body">
@@ -119,22 +98,7 @@
   <%- include('../includes/navbar') %>
 </body>
 
-<script>
-  const body = document.getElementById('body');
-  const button = document.getElementById('theme-toggle');
 
-  button.addEventListener('click', () => {
-    if (body.classList.contains('light-theme')) {
-      body.classList.remove('light-theme');
-      body.classList.add('dark-theme');
-      button.innerHTML = '<i class="fas fa-sun"></i>'; // Change icon for dark theme
-    } else {
-      body.classList.remove('dark-theme');
-      body.classList.add('light-theme');
-      button.innerHTML = '<i class="fas fa-moon"></i>'; // Change icon for light theme
-    }
-  });
-</script>
 <script src="/js/chatbot.js"></script>
 
 </html>
