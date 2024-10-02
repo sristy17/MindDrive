@@ -38,7 +38,7 @@ app.get('/profile', (req, res) => {
 });
 
 app.get('/signup',(_,res) => {
-    res.render('pages/Signup')
+    res.render('pages/profile')
 })
 
 app.listen(PORT, () => {
