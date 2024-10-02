@@ -9,69 +9,96 @@
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
   <!-- Tailwind css cdn  -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* Optional styles for light and dark themes */
+    body.light-theme {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    body.dark-theme {
+      background-color: #1a202c;
+      color: #ffffff;
+    }
+
+    .desktop-message {
+      display: none; /* Hide the desktop message by default */
+    }
+
+    @media (min-width: 768px) {
+      .desktop-message {
+        display: block; /* Show on larger screens */
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="light-theme" id="body">
   <div class="desktop-message">
     <div class="card">
-        This site is best viewed on a mobile device.
-      </div>
+      This site is best viewed on a mobile device.
+    </div>
     <div class="bo">
-        <div class="face">     <div class="earL"></div>
-              <div class="earR"></div>
-              <div class="eyeL"></div>
-              <div class="eyeR"></div>
-              <div class="hairs"></div>
-              <div class="nose"></div>
-              <div class="mouth"></div>
-               <div class="smileL">
-               <svg xml:space="preserve" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
-               <filter id="blurMe">
-           <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
-         </filter>
-         <path d="M25 19c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-           <path d="M35 35c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-             <path d="M45 50c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-       </svg>
-               </div>
-                <div class="smileR">
-                 <svg xml:space="preserve" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
-               <filter id="blurMe">
-           <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
-         </filter>
-         <path d="M25 19c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-           <path d="M35 35c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-             <path d="M45 50c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
-       </svg></div>
-         
-       <div class="snow">
-       <div class="mountain-cap-1"></div>
-             <div class="mountain-cap-2"></div>
-             <div class="mountain-cap-3"></div>
-             <div class="mountain-cap-4"></div>
-             <div>
-       </div>
-       </div>
-       </div></div>
-</div>
-  <div class="sidebar">
+      <div class="face">
+        <div class="earL"></div>
+        <div class="earR"></div>
+        <div class="eyeL"></div>
+        <div class="eyeR"></div>
+        <div class="hairs"></div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+        <div class="smileL">
+          <svg xml:space="preserve" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
+            <filter id="blurMe">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
+            </filter>
+            <path d="M25 19c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
+            <path d="M35 35c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
+            <path d="M45 50c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
+          </svg>
+        </div>
+        <div class="smileR">
+          <svg xml:space="preserve" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
+            <filter id="blurMe">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2"></feGaussianBlur>
+            </filter>
+            <path d="M25 19c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
+            <path d="M35 35c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
+            <path d="M45 50c-6 2-12 4-18 5-2 0-4-2-6-3 1-1 2-3 3-4 11-3 22-7 32-10 2-1 4 1 6 2-1 1-2 4-3 4-4 2-9 4-14 6z" fill="#EF7F71" filter="url(#blurMe)"></path>
+          </svg>
+        </div>
+
+        <div class="snow">
+          <div class="mountain-cap-1"></div>
+          <div class="mountain-cap-2"></div>
+          <div class="mountain-cap-3"></div>
+          <div class="mountain-cap-4"></div>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar flex">
     <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""><b> Chatbot Companion for mental wellness and support.</b></i></a>
+    <div class="fixed top-2 right-4 z-50">
+      <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
+    </div>
   </div>
 
-  <div class="flex flex-col items-center justify-center w-screen min-h-screen bg-gray-100 text-gray-800 mt-10">
-
+  <div class="flex flex-col items-center justify-center w-screen min-h-screen  text-gray-800 mt-10">
     <!-- Component Start -->
-    <div class="flex flex-col flex-grow w-full bg-white shadow-xl rounded-lg overflow-hidden">
+    <div class="flex flex-col flex-grow w-full shadow-xl rounded-lg overflow-hidden">
       <div class="flex flex-col flex-grow h-0 p-4 overflow-auto mb-32">
         <div id="message-container"></div>
         <div id="loader" class="loader" style="display:none;"></div>
@@ -79,9 +106,7 @@
 
       <!-- input box  -->
       <div class="flex w-full mb-20 fixed bottom-0 px-4 items-center">
-        <input id="inputbox"
-          class="w-2/3 mx-2 flex items-center h-10 border-2 border-orange-300 w-full rounded-full px-3 text-sm"
-          type="text" placeholder="Type your message…">
+        <input id="inputbox" class="w-2/3 mx-2 flex items-center h-10 border-2 border-orange-300 w-full rounded-full px-3 text-sm" type="text" placeholder="Type your message…">
 
         <img class="w-8 h-8" id="sendBtn" src="/images/send.png" alt="Send Button">
 
@@ -93,6 +118,23 @@
   </div>
   <%- include('../includes/navbar') %>
 </body>
+
+<script>
+  const body = document.getElementById('body');
+  const button = document.getElementById('theme-toggle');
+
+  button.addEventListener('click', () => {
+    if (body.classList.contains('light-theme')) {
+      body.classList.remove('light-theme');
+      body.classList.add('dark-theme');
+      button.innerHTML = '<i class="fas fa-sun"></i>'; // Change icon for dark theme
+    } else {
+      body.classList.remove('dark-theme');
+      body.classList.add('light-theme');
+      button.innerHTML = '<i class="fas fa-moon"></i>'; // Change icon for light theme
+    }
+  });
+</script>
 <script src="/js/chatbot.js"></script>
 
 </html>

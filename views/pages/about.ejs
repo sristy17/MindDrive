@@ -9,27 +9,52 @@
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
   <!-- Tailwind css cdn  -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Optional styles for light and dark themes */
+    body.light-theme {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    body.dark-theme {
+      background-color: #1a202c;
+      color: #ffffff;
+    }
+
+    .desktop-message {
+      display: none; /* Hide the desktop message by default */
+    }
+
+    @media (min-width: 768px) {
+      .desktop-message {
+        display: block; /* Show on larger screens */
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="light-theme" id="body">
   <div class="desktop-message">
     <div class="card">
-        This site is best viewed on a mobile device.
-      </div>
+      This site is best viewed on a mobile device.
+    </div>
   </div>
-  <div class="sidebar ">
+  <div class="sidebar flex">
     <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
+    <div class="fixed top-2 right-4 z-50">
+      <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
+    </div>
   </div>
+
   <div class="main raleway px-6 pt-8 pb-24">
     <div class="flex items-center justify-center py-6 text-3xl font-bold raleway">
       Mind Drive
@@ -38,33 +63,44 @@
       <img class="w-2/3" src="/images/about-hero.png" alt="no image" />
     </div>
     <div class="text-lg py-4 text-center">
-      <b>Welcome to Mind Drive</b>, <br />Your dedicated companion on your
-      journey towards mental well-being.
+      <b>Welcome to Mind Drive</b>, <br />Your dedicated companion on your journey towards mental well-being.
     </div>
     <div class="">
       <span class="text-lg flex items-center font-bold justify-center py-2">What do you get here?</span>
       <ul class="list-disc pl-4 py-4">
         <li>Explore personalized pathways, engage in mindfulness practices.</li>
-        <li>
-          Track your progress, and discover expert insights tailored to your
-          needs.
-        </li>
+        <li>Track your progress, and discover expert insights tailored to your needs.</li>
       </ul>
 
       <div class="flex items-center justify-center">
-        Whether you're seeking calm, clarity, or connection, Mind Drive is here
-        to guide you every step of the way. Together, let's drive towards a
-        healthier mind and a brighter tomorrow.
+        Whether you're seeking calm, clarity, or connection, Mind Drive is here to guide you every step of the way. Together, let's drive towards a healthier mind and a brighter tomorrow.
       </div>
     </div>
 
-    
     <div class="text-sm items-center justify-center flex flex-col my-8">
-      Copyright © 2024. All rights reserved. 
+      Copyright © 2024. All rights reserved.
       <br>Sristy Paul & Pooranjoy Bhattacharya
     </div>
   </div>
+
   <%- include('../includes/navbar') %>
+
+  <script>
+    const body = document.getElementById('body');
+    const button = document.getElementById('theme-toggle');
+
+    button.addEventListener('click', () => {
+      if (body.classList.contains('light-theme')) {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        button.innerHTML = '<i class="fas fa-sun"></i>'; // Change icon for dark theme
+      } else {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        button.innerHTML = '<i class="fas fa-moon"></i>'; // Change icon for light theme
+      }
+    });
+  </script>
 </body>
 
 </html>

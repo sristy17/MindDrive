@@ -22,22 +22,67 @@
 
     <!-- Tailwind css cdn  -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+        /* light theme style */
+ .light-theme {
+            background-color: #ffffff; 
+            color: #000000;
+        }
+/* Dark theme style */
+        .dark-theme {
+            background-color: #2c2c2c; 
+            color: #ffffff;
+        }
+
+        .page-bg {
+            background-image: linear-gradient(
+                240deg,
+                hsl(6deg 53% 93%) 0%,
+                hsl(10deg 56% 93%) 16%,
+                hsl(14deg 60% 94%) 24%,
+                hsl(18deg 63% 95%) 30%,
+                hsl(22deg 66% 95%) 35%,
+                hsl(25deg 71% 96%) 40%,
+                hsl(29deg 80% 97%) 45%,
+                hsl(33deg 100% 98%) 50%,
+                hsl(22deg 54% 96%) 55%,
+                hsl(11deg 39% 93%) 60%,
+                hsl(357deg 28% 91%) 65%,
+                hsl(339deg 21% 87%) 70%,
+                hsl(313deg 14% 84%) 76%,
+                hsl(271deg 13% 81%) 84%,
+                hsl(236deg 14% 79%) 100%
+            );
+            transition: background-image 0.3s; 
+        }
+
+
+    </style>
 </head>
 
-<body>
+<body class="light-theme" id="body" >
+
+
+
     <div class="page-bg raleway hidden md:flex flex-col">
 
-        <div class=" hidden md:flex flex-col h-screen justify-center items-center">
+        <div class="Display fixed top-4 right-4 z-50">
+            <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
+        </div>
+
+        <div class="hidden md:flex flex-col h-screen justify-center items-center">
             <div class="mx-auto mt-10 flex justify-center px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8">
-                <div class="text-center ">
-                    <h1 class="text-4xl font-bold tracking-tight text-black sm:text-5xl md:text-6xl">
-                        <span class="block xl:inline"><span class="mb-1 block text-8xl">Mind Drive</span>
-                            <span
-                                class="bg-gradient-to-r from-indigo-400 to-pink-600 bg-clip-text text-transparent text-5xl">
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold tracking-tight  sm:text-5xl md:text-6xl">
+                        <span class="span xl:inline">
+                            <span class="mb-1 block text-8xl">Mind Drive</span>
+                            <span class="bg-gradient-to-r from-indigo-400 to-pink-600 bg-clip-text text-transparent text-5xl">
                                 Your AI-Powered Mental Health Companion.
                             </span>
                         </span>
-                        <div class="mt-2">10X faster
+                        <div class="span mt-2">10X faster
                             <span class="relative mt-3 whitespace-nowrap text-blue-600"><svg aria-hidden="true"
                                     viewBox="0 0 418 42"
                                     class="absolute top-3/4 left-0 right-0 m-auto h-[0.58em] w-fit fill-pink-400/50"
@@ -50,7 +95,7 @@
                             </span>
                         </div>
                     </h1>
-                    <p class="mx-auto mt-3 max-w-xl text-lg text-black  sm:mt-5 md:mt-5">
+                    <p class="mx-auto mt-3 max-w-xl text-lg sm:mt-5 md:mt-5">
                         We're not promising world peace, but we can help you navigate those mental speed bumps. With AI
                         as
                         your wingman, you'll be cruising through life in no time.
@@ -74,7 +119,7 @@
 
             <div class="ml-32 flex flex-col justify-center items-center text-center rounded-sm lg:text-left">
                 <div class="flex flex-col gap-2 text-5xl font-bold leading-none">
-                    <span class="text-3xl">
+                    <span class="text-3xl mt-30">
                         More Than Just An App
                     </span>
                     <br> <span class="dark:text-violet-600">Our Mission : </span><br>
@@ -102,7 +147,7 @@
         </div>
 <div class="flex items-center justify-center">
 
-    <div class="page-bg text-violet-600 text-4xl text-center font-bold my-20 bg-slate-200 card1  w-1/2">Open the same link in
+    <div class=" text-4xl text-center font-bold my-20 card1  w-1/2">Open the same link in
         phone to use the
         PWA </div>
     </div>
@@ -124,14 +169,20 @@
         </div>
 
 
-        <div class="text-xl py-8 page-bg mt-12 items-center justify-center flex flex-col ">
+        <div class="text-xl py-8 mt-12 items-center justify-center flex flex-col ">
             Copyright © 2024. All rights reserved.
             <br>Sristy Paul & Pooranjoy Bhattacharya
         </div>
     </div>
 
     <div class="content">
-        <%- include('../includes/sidebar') %>
+        <div class="sidebar flex">
+            <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
+            <div class="fixed top-2 right-4 z-50">
+              <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
+            </div>
+          </div>
+        
             <div class="intro">
                 <h2 class="font-bold raleway">Navigate Your Mental Health Journey Here!</h2>
             </div>
@@ -226,13 +277,55 @@
                         PTSD.</p>
                 </div>
 
-                <div class="text-sm items-center justify-center flex flex-col mb-24">
+                <div class="text-xl py-8 mt-12 items-center justify-center flex flex-col ">
                     Copyright © 2024. All rights reserved.
-                    <br>Sristy Paul & Pooranjoy Bhattacharya
+                    <br>Sristy Paul &amp; Pooranjoy Bhattacharya
                 </div>
 
                 <%- include('../includes/navbar') %>
 </body>
 <script src="/js/global.js"></script>
 
+<script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.getElementById('body');
+        const background = document.querySelector('.page-bg');
+
+        toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        body.classList.toggle('light-theme');
+
+        if (body.classList.contains('dark-theme')) {
+            
+            toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+            background.style.backgroundImage = "linear-gradient(240deg, #1c1c1c 0%, #4d4d4d 100%)"; 
+        } else {
+             toggleButton.innerHTML = '<i class="fas fa-moon"></i>'
+            background.style.backgroundImage = "linear-gradient(240deg, hsl(6deg 53% 93%) 0%, hsl(10deg 56% 93%) 16%, hsl(14deg 60% 94%) 24%, hsl(18deg 63% 95%) 30%, hsl(22deg 66% 95%) 35%, hsl(25deg 71% 96%) 40%, hsl(29deg 80% 97%) 45%, hsl(33deg 100% 98%) 50%, hsl(22deg 54% 96%) 55%, hsl(11deg 39% 93%) 60%, hsl(357deg 28% 91%) 65%, hsl(339deg 21% 87%) 70%, hsl(313deg 14% 84%) 76%, hsl(271deg 13% 81%) 84%, hsl(236deg 14% 79%) 100%)"; 
+            spans.forEach(span => {
+                span.style.color = "white"; 
+            });
+        }
+    });
+
+    const displayElement = document.querySelector('.Display');
+
+function updateDisplay() {
+    if (window.matchMedia("(max-width: 420px)").matches) {
+        displayElement.style.visibility = "hidden";
+    } else {
+        displayElement.style.visibility = "block"; 
+    }
+}
+
+
+updateDisplay();
+
+
+window.addEventListener('resize', updateDisplay);
+</script>
+
 </html>
+
+
+
