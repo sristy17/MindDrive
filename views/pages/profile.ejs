@@ -38,6 +38,7 @@
       <div class="card">This site is best viewed on a mobile device.</div>
     </div>
 
+    <!-- Sign Up Form -->
     <div class="flex justify-center items-center min-h-screen bg-gray-100">
       <form
         id="signupForm"
@@ -46,14 +47,12 @@
       >
         <h2
           class="text-3xl font-bold text-center mb-4 text-gray-800"
-          onclick="toggleForm()"
-        >
+          onclick="toggleForm()">
           Sign Up
         </h2>
         <p class="text-center text-sm text-gray-600 mb-6">
           Already have an account?
           <a
-  
             class="underline text-blue-500 hover:text-blue-700"
             onclick="toggleForm()"
             >Sign In</a
@@ -62,7 +61,9 @@
 
         <!-- Username Input -->
         <div class="mb-6">
-          <label for="username" class="block text-gray-700 font-semibold mb-2"
+          <label 
+          for="username" 
+          class="block text-gray-700 font-semibold mb-2"
             >Username</label
           >
           <input
@@ -76,7 +77,9 @@
 
         <!-- Password Input -->
         <div class="mb-6">
-          <label for="password" class="block text-gray-700 font-semibold mb-2"
+          <label 
+          for="password" 
+          class="block text-gray-700 font-semibold mb-2"
             >Password</label
           >
           <input
@@ -97,35 +100,39 @@
         </button>
       </form>
 
+      <!-- Sign In Form -->
       <form
         id="signInForm"
         method="post"
         class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md"
         style="display: none"
       >
-        <h2 class="text-2xl font-semibold text-center mb-2" onclick="toggleForm()">Sign In</h2>
-        <p class="text-center text-sm text-green-600 mb-4">
-          Don't have account
+        <h2
+          class="text-3xl font-semibold text-center mb-4 text-gray-800"
+          onclick="toggleForm()">
+          Sign In
+        </h2>
+        <p class="text-center text-sm text-gray-600 mb-6">
+          Don't have an account?
           <a
-            class="underline"
-            style="color: #0000ee"
+            class="underline text-blue-500 hover:text-blue-700"
             onclick="toggleForm()"
-            >SignUp</a
+            >Sign Up</a
           >
         </p>
 
         <!-- Username Input -->
-        <div class="mb-4">
+        <div class="mb-6">
           <label
             for="signIn-username"
-            class="block text-gray-700 font-medium mb-2"
-            >Enter Username:</label
+            class="block text-gray-700 font-semibold mb-2"
+            >Username</label
           >
           <input
             type="text"
             id="signIn-username"
             name="username"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your username"
           />
         </div>
@@ -134,14 +141,14 @@
         <div class="mb-6">
           <label
             for="signIn-password"
-            class="block text-gray-700 font-medium mb-2"
-            >Enter Password:</label
+            class="block text-gray-700 font-semibold mb-2"
+            >Password</label
           >
           <input
             type="password"
             id="signIn-password"
             name="password"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your password"
           />
         </div>
@@ -149,7 +156,7 @@
         <!-- Submit Button -->
         <button
           type="submit"
-          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+          class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50"
         >
           Submit
         </button>
