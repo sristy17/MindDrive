@@ -114,3 +114,56 @@ function applyTheme(theme) {
     }
 }
 
+
+let calcScrollValue = () => {
+    let scrollProgress = document.getElementById("progress");
+    let progressValue = document.getElementById("progress-value");
+    let scroll_progress = document.getElementById("scroll");
+    let progress_value = document.getElementById("scroll-value");
+
+    let pos = document.documentElement.scrollTop;
+    let pos_sc = document.documentElement.scrollTop;
+
+    let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrollValue = Math.round((pos * 100) / calcHeight);
+    
+    if(pos > 100 || pos_sc > 100){
+        scrollProgress.style.display = "grid";
+        scroll_progress.style.display = "grid";
+    }
+    else{
+        scrollProgress.style.display = "none";
+        scroll_progress.style.display = "none";
+    }
+    scrollProgress.addEventListener("click", () => {
+        document.documentElement.scrollTop = 0;
+    });
+    scroll_progress.addEventListener("click", () => {
+        document.documentElement.scrollTop = 0;
+    });
+
+    scrollProgress.style.background = `conic-gradient(#7C3AED ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+    scroll_progress.style.background = `conic-gradient(#7C3AED ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+}
+window.onscroll = calcScrollValue;
+window.onload = calcScrollValue;
+
+// let calcScrollValue2 = () => {
+//     let scrollProgress = document.getElementById("scroll");
+//     let progressValue = document.getElementById("scroll-value");
+//     let pos = document.documentElement.scrollTop;
+//     let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//     let scrollValue = Math.round((pos * 100) / calcHeight);
+//     if(pos > 100){
+//         scrollProgress.style.display = "grid";
+//     }
+//     else{
+//         scrollProgress.style.display = "none";
+//     }
+//     scrollProgress.addEventListener("click", () => {
+//         document.documentElement.scrollTop = 0;
+//     });
+//     scrollProgress.style.background = `conic-gradient(#7C3AED ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+// }
+// window.onscroll = calcScrollValue2;
+// window.onload = calcScrollValue2;
