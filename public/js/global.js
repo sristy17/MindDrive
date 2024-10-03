@@ -94,22 +94,3 @@ let calcScrollValue = () => {
 window.onscroll = calcScrollValue;
 window.onload = calcScrollValue;
 
-// let calcScrollValue2 = () => {
-//     let scrollProgress = document.getElementById("scroll");
-//     let progressValue = document.getElementById("scroll-value");
-//     let pos = document.documentElement.scrollTop;
-//     let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-//     let scrollValue = Math.round((pos * 100) / calcHeight);
-//     if(pos > 100){
-//         scrollProgress.style.display = "grid";
-//     }
-//     else{
-//         scrollProgress.style.display = "none";
-//     }
-//     scrollProgress.addEventListener("click", () => {
-//         document.documentElement.scrollTop = 0;
-//     });
-//     scrollProgress.style.background = `conic-gradient(#7C3AED ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
-// }
-// window.onscroll = calcScrollValue2;
-// window.onload = calcScrollValue2;
