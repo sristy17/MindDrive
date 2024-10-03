@@ -23,7 +23,11 @@
     />
 
     <!-- Toastify css cdn -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
 
     <!-- Tailwind css cdn  -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,7 +51,7 @@
     </div> -->
 
     <div class="flex justify-center items-center h-screen">
-    <!------------------------------- user-signup--------------------------- -->
+      <!------------------------------- user-signup--------------------------- -->
       <form
         id="signupForm"
         method="post"
@@ -56,7 +60,13 @@
         <h2 class="text-2xl font-semibold text-center mb-2">Sign Up</h2>
         <p class="text-center text-sm text-green-600 mb-4">
           Already have account
-          <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">Sign In</a>
+          <a
+            href="#"
+            class="underline"
+            style="color: #0000ee"
+            onclick="toggleForm()"
+            >Sign In</a
+          >
         </p>
 
         <!-- Username Input -->
@@ -95,23 +105,31 @@
           Submit
         </button>
       </form>
-    
-    <!------------------------------- user-signin--------------------------- -->
+
+      <!------------------------------- user-signin--------------------------- -->
       <form
         id="signInForm"
         method="post"
         class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md"
-        style="display: none" 
+        style="display: none"
       >
         <h2 class="text-2xl font-semibold text-center mb-2">Sign In</h2>
         <p class="text-center text-sm text-green-600 mb-4">
           Don't have account
-          <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">SignUp</a>
+          <a
+            href="#"
+            class="underline"
+            style="color: #0000ee"
+            onclick="toggleForm()"
+            >SignUp</a
+          >
         </p>
 
         <!-- Username Input -->
         <div class="mb-4">
-          <label for="signIn-username" class="block text-gray-700 font-medium mb-2"
+          <label
+            for="signIn-username"
+            class="block text-gray-700 font-medium mb-2"
             >Enter Username:</label
           >
           <input
@@ -125,7 +143,9 @@
 
         <!-- Password Input -->
         <div class="mb-6">
-          <label for="signIn-password" class="block text-gray-700 font-medium mb-2"
+          <label
+            for="signIn-password"
+            class="block text-gray-700 font-medium mb-2"
             >Enter Password:</label
           >
           <input
@@ -151,16 +171,20 @@
 
   <!-- handeling form data -->
   <script>
-
     function toggleForm() {
-      document.getElementById('signupForm').style.display = document.getElementById('signupForm').style.display === 'none' ? 'block' : 'none';
-      document.getElementById('signInForm').style.display = document.getElementById('signInForm').style.display === 'none' ? 'block' : 'none';
+      document.getElementById("signupForm").style.display =
+        document.getElementById("signupForm").style.display === "none"
+          ? "block"
+          : "none";
+      document.getElementById("signInForm").style.display =
+        document.getElementById("signInForm").style.display === "none"
+          ? "block"
+          : "none";
     }
 
     // handle-signup
     const signupForm = document.getElementById("signupForm");
     signupForm.addEventListener("submit", async (e) => {
-
       console.log(e);
       e.preventDefault();
 
@@ -175,7 +199,7 @@
           },
         });
         const data = await res.json();
-          console.log(data);
+        console.log(data);
         if (res.ok) {
           Toastify({
             text: "user Registered",
@@ -184,7 +208,10 @@
               background: "linear-gradient(to right, #00b09b, #96c93d)",
             },
           }).showToast();
-        }else{
+
+          //--------  toggle to signIn form  -------------------------------------
+          toggleForm();
+        } else {
           Toastify({
             text: data.message,
             className: "info",
@@ -196,18 +223,17 @@
       } catch (error) {
         console.error(error.message);
         Toastify({
-            text: "something went wrong while registering user",
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-          }).showToast();
+          text: "something went wrong while registering user",
+          className: "info",
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+        }).showToast();
       }
     });
 
     // handle-signIn
     signInForm.addEventListener("submit", async (e) => {
-
       e.preventDefault();
 
       const formData = new FormData(signInForm);
@@ -221,7 +247,7 @@
           },
         });
         const data = await res.json();
-          console.log(data);
+        console.log(data);
         if (res.ok) {
           Toastify({
             text: "user successfully logedIn!",
@@ -230,7 +256,10 @@
               background: "linear-gradient(to right, #00b09b, #96c93d)",
             },
           }).showToast();
-        }else{
+          // If login is successful, redirect to home page
+          setTimeout(()=>{window.location.href = "/"}, 1000);
+          
+        } else {
           Toastify({
             text: data.message,
             className: "info",
@@ -242,17 +271,17 @@
       } catch (error) {
         console.error(error.message);
         Toastify({
-            text: "something went wrong while signin the user",
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-          }).showToast();
+          text: "something went wrong while signin the user",
+          className: "info",
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+        }).showToast();
       }
     });
-  
-    
-  
   </script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
 </html>

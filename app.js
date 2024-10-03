@@ -3,8 +3,20 @@ import bp from 'body-parser';
 import authRoutes from './routes/auth.routes.js';
 import geminiRoutes from './routes/gemini.routes.js';
 import connectDatabase from './database/Mongo.database.js';
+import sessions from 'express-session';
 
 const app = express();
+
+app.use(
+    sessions({
+      secret: 'some secret',
+      cookie: {
+        maxAge: 1000 * 60 * 60 * 24, // 24 hours
+      },
+      resave: true,
+      saveUninitialized: false,
+    })
+  );
 
 const PORT = process.env.PORT || 8000;
 
@@ -22,7 +34,7 @@ app.use('/gemini', geminiRoutes);
 
 // Views
 app.get('/', (req, res) => {
-    res.render('pages/index');
+    res.render('pages/index',{user : req.session.existingUser});
 });
 
 app.get('/about', (req, res) => {
