@@ -24,6 +24,7 @@ Featuring an AI-driven chatbot, it intuitively gauges user moods, community supp
 - EJS: Embedded JavaScript templates for server-side rendering.
 - Node.js: JavaScript runtime environment.
 - Gemini API : For AI Responses
+- Commitizen : Rich Commmit CLI
 
 ## Features
 
