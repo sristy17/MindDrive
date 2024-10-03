@@ -47,6 +47,7 @@
     </div> -->
 
     <div class="flex justify-center items-center h-screen">
+    <!------------------------------- user-signup--------------------------- -->
       <form
         id="signupForm"
         method="post"
@@ -54,8 +55,8 @@
       >
         <h2 class="text-2xl font-semibold text-center mb-2">Sign Up</h2>
         <p class="text-center text-sm text-green-600 mb-4">
-          Already have Account
-          <a href="#" class="underline" style="color: #0000ee">SignIn</a>
+          Already have account
+          <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">Sign In</a>
         </p>
 
         <!-- Username Input -->
@@ -94,15 +95,72 @@
           Submit
         </button>
       </form>
+    
+    <!------------------------------- user-signin--------------------------- -->
+      <form
+        id="signInForm"
+        method="post"
+        class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md"
+        style="display: none" 
+      >
+        <h2 class="text-2xl font-semibold text-center mb-2">Sign In</h2>
+        <p class="text-center text-sm text-green-600 mb-4">
+          Don't have account
+          <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">SignUp</a>
+        </p>
+
+        <!-- Username Input -->
+        <div class="mb-4">
+          <label for="signIn-username" class="block text-gray-700 font-medium mb-2"
+            >Enter Username:</label
+          >
+          <input
+            type="text"
+            id="signIn-username"
+            name="username"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter your username"
+          />
+        </div>
+
+        <!-- Password Input -->
+        <div class="mb-6">
+          <label for="signIn-password" class="block text-gray-700 font-medium mb-2"
+            >Enter Password:</label
+          >
+          <input
+            type="password"
+            id="signIn-password"
+            name="password"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter your password"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+        >
+          Submit
+        </button>
+      </form>
     </div>
     <%- include('../includes/navbar') %>
   </body>
 
   <!-- handeling form data -->
   <script>
-    const signupForm = document.getElementById("signupForm");
 
+    function toggleForm() {
+      document.getElementById('signupForm').style.display = document.getElementById('signupForm').style.display === 'none' ? 'block' : 'none';
+      document.getElementById('signInForm').style.display = document.getElementById('signInForm').style.display === 'none' ? 'block' : 'none';
+    }
+
+    // handle-signup
+    const signupForm = document.getElementById("signupForm");
     signupForm.addEventListener("submit", async (e) => {
+
       console.log(e);
       e.preventDefault();
 
@@ -146,6 +204,55 @@
           }).showToast();
       }
     });
+
+    // handle-signIn
+    signInForm.addEventListener("submit", async (e) => {
+
+      e.preventDefault();
+
+      const formData = new FormData(signInForm);
+
+      try {
+        const res = await fetch("http://localhost:8000/auth/signin", {
+          method: "POST",
+          body: new URLSearchParams(formData), // Convert FormData to URL-encoded string
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        });
+        const data = await res.json();
+          console.log(data);
+        if (res.ok) {
+          Toastify({
+            text: "user successfully logedIn!",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+          }).showToast();
+        }else{
+          Toastify({
+            text: data.message,
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+          }).showToast();
+        }
+      } catch (error) {
+        console.error(error.message);
+        Toastify({
+            text: "something went wrong while signin the user",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+          }).showToast();
+      }
+    });
+  
+    
+  
   </script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </html>
