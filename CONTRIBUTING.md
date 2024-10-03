@@ -1,6 +1,6 @@
 # Contribution Rules📚:
 
-- You are allowed to make more than one pull request. We'll merge surely merge the perfect ones :)
+- You are allowed to make more than one pull request. We'll surely merge the perfect ones :)
 - Do NOT remove other content.
 - Styling/code can be pretty, ugly or stupid, big or small as long as it works 😉
 - Make sure your create a separate branch before opening a PR.

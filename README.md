@@ -115,6 +115,13 @@ MindDrive/
 ├── package-lock.json
 └── package.json
 ```
+## Contributors
+
+Thanks to all the contributors of MindDrive!
+
+<a href="https://github.com/sristy17/MindDrive/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sristy17/MindDrive" />
+</a>
 
 ## License
 
