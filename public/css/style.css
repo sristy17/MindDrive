@@ -410,6 +410,23 @@ textarea:focus, input:focus{
   font-size: 35px;
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  #scroll {
+    bottom: 70px; 
+    right: 10px; 
+    height: 50px; 
+    width: 50px; 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4); 
+  }
+
+  #scroll-value {
+    height: 36px; 
+    width: 36px; 
+    font-size: 24px; 
+  }
+}
+
 #scroll:hover{
   box-sizing: 0 0 15px rgba(0, 0, 0, 0.49);
 }
