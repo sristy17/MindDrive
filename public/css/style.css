@@ -262,6 +262,7 @@ font-family: "Raleway", sans-serif;
 }
 
 .anxiety{
+  margin-bottom: 32px;
   background-image: url("../images/Bg1.png");
   background-repeat: no-repeat;
   background-image: cover;
@@ -304,8 +305,8 @@ font-family: "Raleway", sans-serif;
   padding: 50px 50px 10px;
 }
 .feat-p {
-  padding: 0px 40px 0px;
-  font-size: 0.89rem;
+  padding: 24px 22px 0px;
+  font-size: 0.8rem;
   font-family: "Raleway", sans-serif;
 }
 .feat-a{

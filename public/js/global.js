@@ -85,15 +85,17 @@ toggleButton.addEventListener('click', () => {
 
 const themeToggleButton = document.getElementById('ToggleButton');
 const body1 = document.querySelector('#body2');
+const anxietyElements = document.querySelectorAll('.anxiety'); // Select all elements with the class 'anxiety'
 
-
+// Check if there's a saved theme in localStorage and apply it
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     applyTheme(savedTheme);
 }
 
 themeToggleButton.addEventListener('click', () => {
-    if (body1.style.backgroundColor === 'black') {
+    // Toggle between dark and light themes
+    if (body1.style.backgroundColor === 'rgb(26, 32, 44)') { // For #1a202c in RGB
         applyTheme('light');
     } else {
         applyTheme('dark');
@@ -102,17 +104,30 @@ themeToggleButton.addEventListener('click', () => {
 
 function applyTheme(theme) {
     if (theme === 'dark') {
-        body1.style.backgroundColor = 'black';
+        body1.style.backgroundColor = '#1a202c';
         body1.style.color = 'white';
         themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+        
+        // Apply the greyish background to all .anxiety elements
+        anxietyElements.forEach(element => {
+            element.style.backgroundImage = 'url(../images/greyish-bg.png)'; // Greyish background for dark theme
+        });
+        
         localStorage.setItem('theme', 'dark');
     } else {
         body1.style.backgroundColor = 'white';
         body1.style.color = 'black';
         themeToggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+        
+        // Apply the light background to all .anxiety elements
+        anxietyElements.forEach(element => {
+            element.style.backgroundImage = 'url(../images/Bg1.png)'; // Light background for light theme
+        });
+        
         localStorage.setItem('theme', 'light');
     }
 }
+
 
 
 let calcScrollValue = () => {
