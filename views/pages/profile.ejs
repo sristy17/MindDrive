@@ -23,7 +23,11 @@
     />
 
     <!-- Toastify css cdn -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
 
     <!-- Tailwind css cdn  -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,56 +37,56 @@
     <div class="desktop-message">
       <div class="card">This site is best viewed on a mobile device.</div>
     </div>
-    <!-- <div class="content"> -->
-    <!-- <div class="profile">
-      <div class="profile-image">
-        <img style="border-radius: 100%; width: 200px; height: 200px; margin-top: 100px; margin-left: 100px;"
-          src="/images/avatar.jpg" alt="">
-      </div>
-      <div class="info">
-        <b>User Name :</b> Admin <br> <br>
-        <b>User Password :</b> ****** <br> <br>
-        <b>Account Created:</b> 01/07/2024 <br> <br>
-      </div>
-    </div> -->
 
-    <div class="flex justify-center items-center h-screen">
-    <!------------------------------- user-signup--------------------------- -->
+    <!-- Sign Up Form -->
+    <div class="flex justify-center items-center min-h-screen bg-gray-100">
       <form
         id="signupForm"
         method="post"
         class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md"
       >
-        <h2 class="text-2xl font-semibold text-center mb-2">Sign Up</h2>
-        <p class="text-center text-sm text-green-600 mb-4">
-          Already have account
-          <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">Sign In</a>
+        <h2
+          class="text-3xl font-bold text-center mb-4 text-gray-800"
+          onclick="toggleForm()">
+          Sign Up
+        </h2>
+        <p class="text-center text-sm text-gray-600 mb-6">
+          Already have an account?
+          <a
+            class="underline text-blue-500 hover:text-blue-700"
+            onclick="toggleForm()"
+            >Sign In</a
+          >
         </p>
 
         <!-- Username Input -->
-        <div class="mb-4">
-          <label for="username" class="block text-gray-700 font-medium mb-2"
-            >Enter Username:</label
+        <div class="mb-6">
+          <label 
+          for="username" 
+          class="block text-gray-700 font-semibold mb-2"
+            >Username</label
           >
           <input
             type="text"
             id="username"
             name="username"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your username"
           />
         </div>
 
         <!-- Password Input -->
         <div class="mb-6">
-          <label for="password" class="block text-gray-700 font-medium mb-2"
-            >Enter Password:</label
+          <label 
+          for="password" 
+          class="block text-gray-700 font-semibold mb-2"
+            >Password</label
           >
           <input
             type="password"
             id="password"
             name="password"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your password"
           />
         </div>
@@ -90,49 +94,61 @@
         <!-- Submit Button -->
         <button
           type="submit"
-          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+          class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50"
         >
           Submit
         </button>
       </form>
-    
-    <!------------------------------- user-signin--------------------------- -->
+
+      <!-- Sign In Form -->
       <form
         id="signInForm"
         method="post"
         class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md"
-        style="display: none" 
+        style="display: none"
       >
-        <h2 class="text-2xl font-semibold text-center mb-2">Sign In</h2>
-        <p class="text-center text-sm text-green-600 mb-4">
-          Don't have account
-          <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">SignUp</a>
+        <h2
+          class="text-3xl font-semibold text-center mb-4 text-gray-800"
+          onclick="toggleForm()">
+          Sign In
+        </h2>
+        <p class="text-center text-sm text-gray-600 mb-6">
+          Don't have an account?
+          <a
+            class="underline text-blue-500 hover:text-blue-700"
+            onclick="toggleForm()"
+            >Sign Up</a
+          >
         </p>
 
         <!-- Username Input -->
-        <div class="mb-4">
-          <label for="signIn-username" class="block text-gray-700 font-medium mb-2"
-            >Enter Username:</label
+        <div class="mb-6">
+          <label
+            for="signIn-username"
+            class="block text-gray-700 font-semibold mb-2"
+            >Username</label
           >
           <input
             type="text"
             id="signIn-username"
             name="username"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your username"
           />
         </div>
 
         <!-- Password Input -->
         <div class="mb-6">
-          <label for="signIn-password" class="block text-gray-700 font-medium mb-2"
-            >Enter Password:</label
+          <label
+            for="signIn-password"
+            class="block text-gray-700 font-semibold mb-2"
+            >Password</label
           >
           <input
             type="password"
             id="signIn-password"
             name="password"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your password"
           />
         </div>
@@ -140,119 +156,19 @@
         <!-- Submit Button -->
         <button
           type="submit"
-          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+          class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50"
         >
           Submit
         </button>
       </form>
     </div>
+
     <%- include('../includes/navbar') %>
   </body>
 
-  <!-- handeling form data -->
-  <script>
-
-    function toggleForm() {
-      document.getElementById('signupForm').style.display = document.getElementById('signupForm').style.display === 'none' ? 'block' : 'none';
-      document.getElementById('signInForm').style.display = document.getElementById('signInForm').style.display === 'none' ? 'block' : 'none';
-    }
-
-    // handle-signup
-    const signupForm = document.getElementById("signupForm");
-    signupForm.addEventListener("submit", async (e) => {
-
-      console.log(e);
-      e.preventDefault();
-
-      const formData = new FormData(signupForm);
-
-      try {
-        const res = await fetch("http://localhost:8000/auth/signup", {
-          method: "POST",
-          body: new URLSearchParams(formData), // Convert FormData to URL-encoded string
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        });
-        const data = await res.json();
-          console.log(data);
-        if (res.ok) {
-          Toastify({
-            text: "user Registered",
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-          }).showToast();
-        }else{
-          Toastify({
-            text: data.message,
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-          }).showToast();
-        }
-      } catch (error) {
-        console.error(error.message);
-        Toastify({
-            text: "something went wrong while registering user",
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-          }).showToast();
-      }
-    });
-
-    // handle-signIn
-    signInForm.addEventListener("submit", async (e) => {
-
-      e.preventDefault();
-
-      const formData = new FormData(signInForm);
-
-      try {
-        const res = await fetch("http://localhost:8000/auth/signin", {
-          method: "POST",
-          body: new URLSearchParams(formData), // Convert FormData to URL-encoded string
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        });
-        const data = await res.json();
-          console.log(data);
-        if (res.ok) {
-          Toastify({
-            text: "user successfully logedIn!",
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-          }).showToast();
-        }else{
-          Toastify({
-            text: data.message,
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-          }).showToast();
-        }
-      } catch (error) {
-        console.error(error.message);
-        Toastify({
-            text: "something went wrong while signin the user",
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-          }).showToast();
-      }
-    });
-  
-    
-  
-  </script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script defer src="/js/auth.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
 </html>
