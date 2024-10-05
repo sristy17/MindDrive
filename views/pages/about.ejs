@@ -4,32 +4,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About</title>
+
+    <!-- Title and Meta Tags for SEO -->
+
+  <title>About | Mind Drive</title>
+
+  <meta name="description" content="Welcome to Mind Drive, your dedicated companion on your journey towards mental well-being. Explore personalized pathways and engage in mindfulness practices." />
+  <meta name="keywords" content="Mind Drive, mental well-being, mindfulness, personalized pathways, mental health, meditation" />
+  <meta name="author" content="Sristy Paul & Pooranjoy Bhattacharya" />
+  <meta name="robots" content="index, follow" />
+
+      <!-- For Social Platforms  -->
+  <meta property="og:title" content="About Mind Drive" />
+  <meta property="og:description" content="Join us at Mind Drive, where you can explore personalized pathways and engage in mindfulness practices for mental well-being." />
+
+      <!-- For Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Mind Drive" />
+  <meta name="twitter:description" content="Discover Mind Drive, your companion for mental well-being and personalized mindfulness pathways." />
+
+    <!-- Additional Meta Tags -->
+    <meta name="expires" content="never">
+    <meta name="rating" content="General">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+<!--Link starts here-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+ <!-- Favicon -->
+ <link rel="icon" href="/images/favicon.ico" type="image/x-icon"> 
 
   <!-- Tailwind css cdn  -->
   <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
-<body>
+<body class="light-theme" id="body">
   <div class="desktop-message">
     <div class="card">
-        This site is best viewed on a mobile device.
-      </div>
+      This site is best viewed on a mobile device.
+    </div>
   </div>
-  <div class="sidebar ">
+  <div class="sidebar flex">
     <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
+    <div class="fixed top-2 right-4 z-50">
+      <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
+    </div>
   </div>
+
   <div class="main raleway px-6 pt-8 pb-24">
     <div class="flex items-center justify-center py-6 text-3xl font-bold raleway">
       Mind Drive
@@ -38,33 +70,31 @@
       <img class="w-2/3" src="/images/about-hero.png" alt="no image" />
     </div>
     <div class="text-lg py-4 text-center">
-      <b>Welcome to Mind Drive</b>, <br />Your dedicated companion on your
-      journey towards mental well-being.
+      <b>Welcome to Mind Drive</b>, <br />Your dedicated companion on your journey towards mental well-being.
     </div>
     <div class="">
       <span class="text-lg flex items-center font-bold justify-center py-2">What do you get here?</span>
       <ul class="list-disc pl-4 py-4">
         <li>Explore personalized pathways, engage in mindfulness practices.</li>
-        <li>
-          Track your progress, and discover expert insights tailored to your
-          needs.
-        </li>
+        <li>Track your progress, and discover expert insights tailored to your needs.</li>
       </ul>
 
       <div class="flex items-center justify-center">
-        Whether you're seeking calm, clarity, or connection, Mind Drive is here
-        to guide you every step of the way. Together, let's drive towards a
-        healthier mind and a brighter tomorrow.
+        Whether you're seeking calm, clarity, or connection, Mind Drive is here to guide you every step of the way. Together, let's drive towards a healthier mind and a brighter tomorrow.
       </div>
     </div>
 
-    
     <div class="text-sm items-center justify-center flex flex-col my-8">
-      Copyright © 2024. All rights reserved. 
+      Copyright © 2024. All rights reserved.
       <br>Sristy Paul & Pooranjoy Bhattacharya
     </div>
   </div>
+
   <%- include('../includes/navbar') %>
+
+
 </body>
+
+<script src="/js/about.js"></script>
 
 </html>

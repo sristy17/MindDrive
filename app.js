@@ -18,13 +18,12 @@ app.use(
     })
   );
 
+
 const PORT = process.env.PORT || 8000;
 
 // Setting up viewport for EJS
 app.set('view engine', 'ejs');
-
 app.use(express.static('public'));
-
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
