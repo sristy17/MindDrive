@@ -40,9 +40,9 @@ signupForm.addEventListener("submit", async (e) => {
     } else {
       Toastify({
         text: data.message,
-        className: "info",
+        className: "error",
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right, red, red)",
         },
       }).showToast();
     }
@@ -66,7 +66,7 @@ signInForm.addEventListener("submit", async (e) => {
   try {
     const res = await fetch("http://localhost:8000/auth/signin", {
       method: "POST",
-      body: new URLSearchParams(formData), // Convert FormData to URL-encoded string
+      body: new URLSearchParams(formData),
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
@@ -81,12 +81,15 @@ signInForm.addEventListener("submit", async (e) => {
           background: "linear-gradient(to right, #00b09b, #96c93d)",
         },
       }).showToast();
+
+      setTimeout(()=>{window.location.href = "/"}, 1000);
+      
     } else {
       Toastify({
         text: "Invalid Credentials",
         className: "error",
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right, red, red)",
         },
       }).showToast();
     }
