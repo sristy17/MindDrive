@@ -25,11 +25,13 @@ const signup = async (req, res) => {
 
 const signin = async (req, res) => {
     const { username, password } = req.body;
+    
 
     try {
         if (!username || !password) return res.status(500).json({ message: "Invalid body params" })
 
         const existingUser = await User.findOne({ username });
+        
         if (!existingUser) {
             return res.status(400).json({ message: 'User does not exist' });
         }
@@ -39,10 +41,19 @@ const signin = async (req, res) => {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
+        //store user info in the session
+        req.session.existingUser = {username : existingUser.username}
+
         res.status(200).json({ message: 'Signin successful', user: existingUser });
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
     }
 };
 
-export { signup, signin };
+const Logout = (req, res) => {
+    req.session.destroy();
+    res.clearCookie('connect.sid', { path: '/' });
+    res.redirect('/');
+  };
+
+export { signup, signin,Logout };
