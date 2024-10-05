@@ -24,6 +24,7 @@ Featuring an AI-driven chatbot, it intuitively gauges user moods, community supp
 - EJS: Embedded JavaScript templates for server-side rendering.
 - Node.js: JavaScript runtime environment.
 - Gemini API : For AI Responses
+- Commitizen : Rich Commmit CLI
 
 ## Features
 
@@ -115,6 +116,13 @@ MindDrive/
 ├── package-lock.json
 └── package.json
 ```
+## Contributors
+
+Thanks to all the contributors of MindDrive!
+
+<a href="https://github.com/sristy17/MindDrive/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sristy17/MindDrive" />
+</a>
 
 ## License
 

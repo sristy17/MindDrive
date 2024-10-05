@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>profile</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+       <!-- Page Title -->
+       <title>Profile | Mind Drive</title>
+
+        <!-- Meta tags for SEO -->
+        <meta name="description" content="Profile page for Mind Drive - A platform to enhance your skills and connect with like-minded individuals. Sign up or sign in to join the community." />
+        <meta name="keywords" content="Mind Drive, profile, signup, signin, community, skills enhancement, online learning" />
+        <meta name="author" content="Sristy Paul & Pooranjoy Bhattacharya">
+        <meta name="robots" content="index, follow" />
+
+        <!--For social Platforms -->
+        <meta property="og:title" content="Profile | Mind Drive" />
+        <meta property="og:description" content="Join Mind Drive and enhance your skills. Create an account or sign in to access exclusive resources and community support." />
+
+         <!--For Twitter Platforms -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Profile | Mind Drive" />
+        <meta name="twitter:description" content="Join Mind Drive and enhance your skills. Create an account or sign in to access exclusive resources and community support." />
+
+            <!-- Additional Meta Tags -->
+  <meta name="expires" content="never">
+  <meta name="rating" content="General">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+<!--Link Starts from here-->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -21,6 +47,31 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+IS:wght@100..400&family=Playwrite+NL:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+         <!-- Favicon -->
+         <link rel="icon" href="/images/favicon.ico" type="image/x-icon"> 
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Tailwind css cdn  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="light-theme" id="body">
 
     <!-- Toastify css cdn -->
     <link
@@ -34,9 +85,29 @@
   </head>
 
   <body>
+
     <div class="desktop-message">
       <div class="card">This site is best viewed on a mobile device.</div>
     </div>
+
+
+    <div class="content">
+      <div class="sidebar flex">
+        <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
+        <div class="fixed top-2 right-4 z-50">
+          <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
+        </div>
+      </div>
+
+        <div class="profile">
+            <div class="profile-image">
+                <img style="border-radius: 100%; width: 200px; height: 200px; margin-top: 100px; margin-left: 100px;" src="/images/avatar.jpg" alt="">
+            </div>
+        <div class="info">
+            <b>User Name :</b> Admin <br> <br>
+            <b>User Password :</b> ****** <br> <br>
+            <b>Account Created:</b> 01/07/2024 <br> <br>
+
     <!-- <div class="content"> -->
     <!-- <div class="profile">
       <div class="profile-image">
@@ -70,37 +141,42 @@
         </p>
 
         <!-- Username Input -->
-        <div class="mb-4">
-          <label for="username" class="block text-gray-700 font-medium mb-2"
-            >Enter Username:</label
+        <div class="mb-6">
+          <label 
+          for="username" 
+          class="block text-gray-700 font-semibold mb-2"
+            >Username</label
           >
           <input
             type="text"
             id="username"
             name="username"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your username"
           />
         </div>
 
         <!-- Password Input -->
         <div class="mb-6">
-          <label for="password" class="block text-gray-700 font-medium mb-2"
-            >Enter Password:</label
+          <label 
+          for="password" 
+          class="block text-gray-700 font-semibold mb-2"
+            >Password</label
           >
           <input
             type="password"
             id="password"
             name="password"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your password"
           />
+
         </div>
 
         <!-- Submit Button -->
         <button
           type="submit"
-          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+          class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50"
         >
           Submit
         </button>
@@ -113,6 +189,7 @@
         class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md"
         style="display: none"
       >
+
         <h2 class="text-2xl font-semibold text-center mb-2">Sign In</h2>
         <p class="text-center text-sm text-green-600 mb-4">
           Don't have account
@@ -126,6 +203,7 @@
         </p>
 
         <!-- Username Input -->
+
         <div class="mb-4">
           <label
             for="signIn-username"
@@ -136,7 +214,7 @@
             type="text"
             id="signIn-username"
             name="username"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your username"
           />
         </div>
@@ -147,12 +225,13 @@
             for="signIn-password"
             class="block text-gray-700 font-medium mb-2"
             >Enter Password:</label
+
           >
           <input
             type="password"
             id="signIn-password"
             name="password"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
             placeholder="Enter your password"
           />
         </div>
@@ -160,14 +239,14 @@
         <!-- Submit Button -->
         <button
           type="submit"
-          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+          class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50"
         >
           Submit
         </button>
       </form>
     </div>
+
     <%- include('../includes/navbar') %>
-  </body>
 
   <!-- handeling form data -->
   <script>
@@ -280,8 +359,10 @@
       }
     });
   </script>
+
   <script
     type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/toastify-js"
   ></script>
 </html>
+
