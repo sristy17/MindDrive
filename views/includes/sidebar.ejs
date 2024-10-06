@@ -44,6 +44,7 @@
             });
             if (res.ok) {
                 window.location.href = "/";
+                localStorage.clear()
             }
         } catch (error) {
             console.error("Error during logout:", error);

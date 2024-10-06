@@ -33,24 +33,28 @@ app.use('/gemini', geminiRoutes);
 
 // Views
 app.get('/', (req, res) => {
+    console.log(req.session.existingUser)
     res.render('pages/index',{user : req.session.existingUser});
 });
 
 app.get('/about', (req, res) => {
-    res.render('pages/about');
+    console.log(req.session.existingUser)
+    res.render('pages/about',{user : req.session.existingUser});
 });
 
 app.get('/chatbot', (req, res) => {
-    res.render('pages/chatbot');
+    console.log(req.session.existingUser)
+    res.render('pages/chatbot',{user : req.session.existingUser});
 });
 
 app.get('/profile', (req, res) => {
-    res.render('pages/profile');
+    res.render('pages/profile',{user : req.session.existingUser});
 });
 
 app.get('/signup',(_,res) => {
     res.render('pages/profile')
 })
+
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
