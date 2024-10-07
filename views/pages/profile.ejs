@@ -86,16 +86,22 @@
 
 
     <div class="content">
+      <% if (typeof user == 'undefined') { %>
       <div class="sidebar flex">
         <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
         <div class="fixed top-2 right-4 z-50">
           <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
         </div>
       </div>
+      <% } %>
 
+      <% if (typeof user !== 'undefined') { %>
+        <%- include('../includes/sidebar') %>
+      <% } %>
 
 
       <div class="flex justify-center items-center h-screen">
+        <% if (typeof user == 'undefined') { %>
         <!------------------------------- user-signup--------------------------- -->
         <form id="signupForm" method="post" class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md">
           <h2 class="text-2xl font-semibold text-center mb-2">Sign Up</h2>
@@ -162,6 +168,16 @@
           </button>
         </form>
       </div>
+
+      <% } %>
+
+      <% if (typeof user !== 'undefined') { %>
+        <div id="user-info">
+          <script>
+              document.getElementById("user-info").innerText = localStorage.getItem("userData");
+          </script>
+        </div>
+      <% } %>
 
       <%- include('../includes/navbar') %>
 

@@ -72,7 +72,7 @@ signInForm.addEventListener("submit", async (e) => {
       },
     });
     const data = await res.json();
-    console.log(data);
+    localStorage.setItem("userData",data.user.username)
     if (res.ok) {
       Toastify({
         text: "User Successfully LogedIn!",
