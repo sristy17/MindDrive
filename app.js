@@ -2,7 +2,7 @@ import express from 'express';
 import bp from 'body-parser';
 import authRoutes from './routes/auth.routes.js';
 import geminiRoutes from './routes/gemini.routes.js';
-import connectDatabase from './database/Mongo.database.js';
+// import connectDatabase from './database/Mongo.database.js';
 import sessions from 'express-session';
 
 const app = express();
@@ -58,5 +58,5 @@ app.get('/signup',(_,res) => {
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
-    connectDatabase();
+    // connectDatabase();
 });

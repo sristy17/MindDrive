@@ -27,12 +27,14 @@
     "express-session": "^1.18.0",
     "method-override": "^3.0.0",
     "mongodb": "^6.8.0",
-    "mongoose": "^8.4.4",
-    "nodemon": "^3.1.4"
+    "mongoose": "^8.4.4"
   },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
