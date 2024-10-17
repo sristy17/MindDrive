@@ -93,6 +93,71 @@ html {
   text-align: center;
 }
 
+
+/*--animation--part--*/
+
+/*--animation--part--*/
+.image-animation {
+  animation: animate 2.1s ease-in-out infinite; 
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75%{
+    transform: translateY(20px);
+  }
+  100%{
+    transform: translateY(-20px);
+  }
+}
+
+.animate-text{
+  animation: animateText ;
+  animation-timeline: view();
+}
+
+@keyframes animateText{
+  0%{
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+.rotate-animate {
+  animation: ProfessionalScale  cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0; 
+  animation-timeline: view();
+}
+
+
+@keyframes ProfessionalScale {
+  0% {
+    transform: scale(0.3);
+    opacity: 0; 
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1; 
+  }
+  100% {
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+
+
 /* Media Query for Desktop */
 @media only screen and (max-width: 451px) {
   .desktop-message {
