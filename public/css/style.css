@@ -182,7 +182,7 @@ html {
   justify-content: center;
   user-select: none;
   font-weight: bolder;
-  /* color: black; */
+  color: black;
 }
 
 .card1:hover {
@@ -555,6 +555,8 @@ body.dark-theme {
   background-color: #2c2c2c; 
   color: #ffffff;
 }
+
+.light-theme 
 
 .page-bg {
   background-image: linear-gradient(
