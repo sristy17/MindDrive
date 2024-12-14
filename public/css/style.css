@@ -271,8 +271,7 @@ html {
   justify-content: start;
   width: 100%;
   top: 0;
-  position: fixed;
-  ;
+  /* position: fixed; */
 }
 
 .sidebar a {
@@ -297,9 +296,9 @@ html {
 }
 
 .intro{
-padding: 50px 5px 0px;
+padding: 30px 5px 0px;
 text-align: center;
-margin-top: 30px;
+/* margin-top: 30px; */
 }
 
 .mood h2{
@@ -328,15 +327,17 @@ font-family: "Raleway", sans-serif;
 }
 
 .anxiety{
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
   background-image: url("../images/Bg1.png");
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-image: cover;
-  height: 390px; 
-  width: 100%; 
+  /* height: 390px;  */
+  /* width: 100%;  */
   text-align: left;
   color: black;
   border-radius: 50px;
+  margin: 20px;
+  padding: 30px;
 }
 .depression{
   background-image: url("../images/Bg2.png");
