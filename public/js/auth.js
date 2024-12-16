@@ -20,7 +20,7 @@ signupForm.addEventListener("submit", async (e) => {
   const formData = new FormData(signupForm);
 
   try {
-    const res = await fetch("http://localhost:8000/auth/signup", {
+    const res = await fetch("/auth/signup", {
       method: "POST",
       body: new URLSearchParams(formData),
       headers: {
@@ -64,7 +64,7 @@ signInForm.addEventListener("submit", async (e) => {
   const formData = new FormData(signInForm);
 
   try {
-    const res = await fetch("http://localhost:8000/auth/signin", {
+    const res = await fetch("/auth/signin", {
       method: "POST",
       body: new URLSearchParams(formData),
       headers: {
