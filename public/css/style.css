@@ -478,6 +478,14 @@ textarea:focus, input:focus{
   font-size: 35px;
 }
 
+body.dark-theme #scroll-value {
+  color: #000000; /* Change this to a color that contrasts with the dark background */
+}
+
+body.dark-theme #scroll {
+  background-color: #ffffff; /* Keep this or change to a darker shade if needed */
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   #scroll {
