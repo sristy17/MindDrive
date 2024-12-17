@@ -1,5 +1,33 @@
+<style>
+    .navbar a {
+        color: #666;
+        text-decoration: none;
+    }
+
+    .navbar a.active {
+        color: #2563eb;
+        font-weight: bold;
+        border-bottom: 2px solid #2563eb;
+    }
+</style>
+
 <div class="navbar">
-    <a href="/about"><i class="bi bi-grid-1x2"></i></a>
-    <a href="/"><i class="bi bi-house"></i></a>
-    <a href="/chatbot"><i class="bi bi-chat"></i></a>
+    <a href="/about" id="about"><i class="bi bi-grid-1x2"></i></a>
+    <a href="/" about="home"><i class="bi bi-house"></i></a>
+    <a href="/chatbot" about="chatbot"><i class="bi bi-chat"></i></a>
 </div>
+
+<script>
+    // Get the current URL path
+    const currentPath = window.location.pathname;
+
+    // Select all links in the navbar
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    // Loop through each link and check if the href matches the current path
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active'); // Add the "active" class to the current page's link
+        }
+    });
+</script>

@@ -461,7 +461,7 @@ textarea:focus, input:focus{
   right: 22px;
   height: 70px;
   width: 70px;
-  display: grid;
+  display: none;
   place-items: center;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.49);
@@ -479,7 +479,6 @@ textarea:focus, input:focus{
   display: grid;
   place-items: center;
   color: #001a2e;
-  font-size: 35px;
 }
 
 body.dark-theme #scroll-value {
@@ -503,7 +502,6 @@ body.dark-theme #scroll {
   #scroll-value {
     height: 36px; 
     width: 36px; 
-    font-size: 24px; 
   }
 }
 

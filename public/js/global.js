@@ -89,6 +89,7 @@ const anxietyElements = document.querySelectorAll('.anxiety'); // Select all ele
 
 // Check if there's a saved theme in localStorage and apply it
 const savedTheme = localStorage.getItem('theme');
+
 if (savedTheme) {
     applyTheme(savedTheme);
 }
@@ -107,46 +108,52 @@ function applyTheme(theme) {
         body1.style.backgroundColor = '#1a202c';
         body1.style.color = 'white';
         themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-        
+
         // Apply the greyish background to all .anxiety elements
         anxietyElements.forEach(element => {
             element.style.backgroundImage = 'url(../images/greyish-bg.png)'; // Greyish background for dark theme
         });
-        
+
         localStorage.setItem('theme', 'dark');
     } else {
         body1.style.backgroundColor = 'white';
         body1.style.color = 'black';
         themeToggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-        
+
         // Apply the light background to all .anxiety elements
         anxietyElements.forEach(element => {
             element.style.backgroundImage = 'url(../images/Bg1.png)'; // Light background for light theme
         });
-        
+
         localStorage.setItem('theme', 'light');
     }
 }
 
+// Moved DOM element selections outside the calcScrollValue function to avoid re-selecting elements on every scroll event. 
+// Repeated DOM access on each scroll can lead to performance issues, especially in large documents. 
+// Since these elements remain unchanged during runtime, they only need to be accessed once.
 
+let scrollProgress = document.getElementById("progress");
+let progress_value = document.getElementById("progress-value");
+let scroll_progress = document.getElementById("scroll");
+let scroll_value = document.getElementById("scroll-value");
+progress_value.style.fontSize = '1rem';
+scroll_value.style.fontSize = '0.8rem';
 
 let calcScrollValue = () => {
-    let scrollProgress = document.getElementById("progress");
-    let progressValue = document.getElementById("progress-value");
-    let scroll_progress = document.getElementById("scroll");
-    let progress_value = document.getElementById("scroll-value");
-
     let pos = document.documentElement.scrollTop;
-    let pos_sc = document.documentElement.scrollTop;
+    // let pos_sc = document.documentElement.scrollTop;
 
     let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrollValue = Math.round((pos * 100) / calcHeight);
-    
-    if(pos > 100 || pos_sc > 100){
+
+    if (pos > 100) {
         scrollProgress.style.display = "grid";
         scroll_progress.style.display = "grid";
+        scroll_value.textContent = `${scrollValue}%`;
+        progress_value.textContent = `${scrollValue}%`;
     }
-    else{
+    else {
         scrollProgress.style.display = "none";
         scroll_progress.style.display = "none";
     }
