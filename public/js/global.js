@@ -77,9 +77,9 @@ toggleButton.addEventListener('click', () => {
     } else {
         toggleButton.innerHTML = '<i class="fas fa-moon"></i>'
         background.style.backgroundImage = "linear-gradient(240deg, hsl(6deg 53% 93%) 0%, hsl(10deg 56% 93%) 16%, hsl(14deg 60% 94%) 24%, hsl(18deg 63% 95%) 30%, hsl(22deg 66% 95%) 35%, hsl(25deg 71% 96%) 40%, hsl(29deg 80% 97%) 45%, hsl(33deg 100% 98%) 50%, hsl(22deg 54% 96%) 55%, hsl(11deg 39% 93%) 60%, hsl(357deg 28% 91%) 65%, hsl(339deg 21% 87%) 70%, hsl(313deg 14% 84%) 76%, hsl(271deg 13% 81%) 84%, hsl(236deg 14% 79%) 100%)";
-        spans.forEach(span => {
-            span.style.color = "white";
-        });
+        // spans.forEach(span => {
+        //     span.style.color = "white";
+        // });
     }
 });
 
@@ -137,8 +137,11 @@ let scrollProgress = document.getElementById("progress");
 let progress_value = document.getElementById("progress-value");
 let scroll_progress = document.getElementById("scroll");
 let scroll_value = document.getElementById("scroll-value");
+
 progress_value.style.fontSize = '1rem';
+progress_value.style.color = 'black';
 scroll_value.style.fontSize = '0.8rem';
+
 
 let calcScrollValue = () => {
     let pos = document.documentElement.scrollTop;
