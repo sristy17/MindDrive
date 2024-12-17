@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   height: 100vh;
   font-family: Arial, sans-serif;
@@ -5,10 +9,6 @@ body {
   padding: 0;
   scroll-behavior: smooth;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 html {
   scroll-behavior: smooth;
@@ -89,12 +89,29 @@ html {
   border-top-right-radius: 3rem;
 }
 
-.navbar a {
+.navbar div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar div span {
+  font-size: 12px;
+}
+
+/* .navbar a {
   color: #3f3f3c;
   text-decoration: none;
   padding: 10px;
   flex: 1;
   text-align: center;
+} */
+
+#navicon {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 

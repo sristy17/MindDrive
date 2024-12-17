@@ -96,7 +96,6 @@ const getTasks = async (req, res) => {
 const botresponse = async (req, res) => {
   try {
     const { message } = req.body;
-    console.log(message)
     if (!message) {
       return res.status(400).json({ error: 'Message value is required' });
     }
