@@ -524,6 +524,15 @@ textarea:focus, input:focus{
     transform: translateY(-20px); /* Adjust the distance as needed */
   }
 }
+.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-theme {
+  background-color: #000000;
+  color: #ffffff;
+}
 
 
 body.light-theme {
