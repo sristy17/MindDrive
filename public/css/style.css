@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   height: 100vh;
   font-family: Arial, sans-serif;
@@ -85,12 +89,29 @@ html {
   border-top-right-radius: 3rem;
 }
 
-.navbar a {
+.navbar div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar div span {
+  font-size: 12px;
+}
+
+/* .navbar a {
   color: #3f3f3c;
   text-decoration: none;
   padding: 10px;
   flex: 1;
   text-align: center;
+} */
+
+#navicon {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 
@@ -457,7 +478,7 @@ textarea:focus, input:focus{
   right: 22px;
   height: 70px;
   width: 70px;
-  display: grid;
+  display: none;
   place-items: center;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.49);
@@ -475,7 +496,14 @@ textarea:focus, input:focus{
   display: grid;
   place-items: center;
   color: #001a2e;
-  font-size: 35px;
+}
+
+body.dark-theme #scroll-value {
+  color: #000000; /* Change this to a color that contrasts with the dark background */
+}
+
+body.dark-theme #scroll {
+  background-color: #ffffff; /* Keep this or change to a darker shade if needed */
 }
 
 /* Mobile styles */
@@ -491,7 +519,6 @@ textarea:focus, input:focus{
   #scroll-value {
     height: 36px; 
     width: 36px; 
-    font-size: 24px; 
   }
 }
 

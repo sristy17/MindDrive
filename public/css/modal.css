@@ -93,6 +93,7 @@
       transform: rotate(360deg);
     }
   } 
+<<<<<<< HEAD
   body.light-theme {
     background-color: #ffffff;
     color: #000000;
@@ -102,3 +103,10 @@
     background-color: #1a202c;
     color: #ffffff;
   }
+=======
+  
+  .animate-text {
+    line-height: 1.5;  
+    white-space: nowrap;  
+}
+>>>>>>> upstream/kwoc-2024

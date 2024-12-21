@@ -53,8 +53,31 @@ app.get('/profile', (req, res) => {
 
 app.get('/signup',(_,res) => {
     res.render('pages/profile')
-})
+});
 
+app.get('/#/*', (req, res) => {
+  res.render('pages/404');
+}); 
+
+app.get('/about/*', (req, res) => {
+    res.render('pages/404');
+  }); 
+
+app.get('/signup/*', (req, res) => {
+    res.render('pages/404');
+  }); 
+
+app.get('/chatbot/*', (req, res) => {
+    res.render('pages/404');
+  }); 
+
+app.get('/profile/*', (req, res) => {
+    res.render('pages/404');
+  }); 
+
+app.get('*', (req, res) => {
+    res.render('pages/404');
+  });
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
