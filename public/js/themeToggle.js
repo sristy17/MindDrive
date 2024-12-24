@@ -27,15 +27,5 @@ function themeToggle(theme) {
     button.innerHTML = '<i class="fas fa-moon"></i>'; // Change icon for light theme
   }
   
-  // Logic for changing the modal box theme based on the selected theme
-  const modal = document.getElementById('mood-modal');
-  if (theme === 'dark') {
-    modal.style.backgroundColor = '#1a202c'; // Dark background color
-    modal.style.color = '#ffffff'; // Light text color
-  } else {
-    modal.style.backgroundColor = '#ffffff'; // Light background color
-    modal.style.color = '#1a202c'; // Dark text color
-  }
-
 }
 
