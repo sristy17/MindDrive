@@ -102,29 +102,3 @@
 .loader {
   background: transparent;
 }
-
-/* Light Theme */
-body.light-theme #mood-modal {
-  background-color: #ffffff; 
-  color: #1a202c; 
-  
-}
-
-/* Dark Theme */
-body.dark-theme #mood-modal {
-  background-color: #1a202c;
-  color: #ffffff;
-}
-
-/*Button Changes*/
-#closebtn {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#closebtn:hover {
-  background-color: #555;
-}
