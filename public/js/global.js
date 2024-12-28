@@ -116,8 +116,8 @@ function applyTheme(theme) {
         });
         modalbackground.style.backgroundImage = 'url(../images/greyish-bg.png)'; 
         modalbackground.style.width= '70vw';
-        modalbackground.style.height = 'auto'; // Greyish background for dark theme      
-        modalbackground.style.backgroundSize = 'cover'; // Greyish background for dark theme
+        modalbackground.style.height = 'auto';    
+        modalbackground.style.backgroundSize = 'cover'; 
         localStorage.setItem('theme', 'dark');
     } else {
         body1.style.backgroundColor = 'white';
@@ -131,8 +131,8 @@ function applyTheme(theme) {
         });
         modalbackground.style.backgroundImage = 'url(../images/Bg1.png)'; // Greyish background for dark theme
         modalbackground.style.width= '70vw';
-        modalbackground.style.height = 'auto'; // Greyish background for dark theme      
-        modalbackground.style.backgroundSize = 'cover'; // Greyish background for dark theme
+        modalbackground.style.height = 'auto'; 
+        modalbackground.style.backgroundSize = 'cover';
         localStorage.setItem('theme', 'light');
     }
 }
