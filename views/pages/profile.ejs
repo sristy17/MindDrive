@@ -85,7 +85,7 @@
     </div>
 
 
-    <div class="content">
+    <div class="content" id="profilepage">
       <% if (typeof user == 'undefined') { %>
       <div class="sidebar flex">
         <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
@@ -180,7 +180,33 @@
       <% } %>
 
       <%- include('../includes/navbar') %>
-
+      <script>
+        const body = document.getElementById('profilepage');
+        const button = document.getElementById('theme-toggle');
+        let form;
+        if(document.getElementById("signupForm").style.display === "none"){
+          form = document.getElementById("signInForm");
+        }else{
+          form = document.getElementById("signupForm");
+        }
+        
+        button.addEventListener('click', () => {
+          if (body.classList.contains('light-theme')) {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+            form.classList.add('bg-white', 'text-black');
+            form.classList.remove('bg-black', 'text-white');
+            button.innerHTML = '<i class="fas fa-sun"></i>';
+          } else {
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+            form.classList.remove('bg-white', 'text-black');
+            form.classList.add('bg-black', 'text-white');
+            button.innerHTML = '<i class="fas fa-moon"></i>'; 
+          }
+        });
+      </script>
+      <!-- <script src="/public/js/profile.js"></script> -->
         <!-- handeling form data -->
         <script src="/js/auth.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
