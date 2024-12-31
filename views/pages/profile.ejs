@@ -100,9 +100,13 @@
       <% } %>
 
 
-      <div class="flex justify-center items-center h-screen">
+      <div class="flex h-screen">
         <% if (typeof user == 'undefined') { %>
         <!------------------------------- user-signup--------------------------- -->
+        
+        <div class="flex items-center justify-center w-full">
+
+
         <form id="signupForm" method="post" class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md">
           <h2 class="text-2xl font-semibold text-center mb-2">Sign Up</h2>
           <p class="text-center text-sm text-green-600 mb-4">
@@ -168,15 +172,12 @@
           </button>
         </form>
       </div>
+      </div>
 
       <% } %>
 
       <% if (typeof user !== 'undefined') { %>
-        <div id="user-info">
-          <script>
-              document.getElementById("user-info").innerText = localStorage.getItem("userData");
-          </script>
-        </div>
+        <%- include('../pages/user') %>
       <% } %>
 
       <%- include('../includes/navbar') %>
@@ -184,5 +185,6 @@
         <!-- handeling form data -->
         <script src="/js/auth.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
+    </div></body>
+    
 </html>
