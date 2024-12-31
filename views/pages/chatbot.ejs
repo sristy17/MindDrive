@@ -95,12 +95,16 @@
       </div>
     </div>
   </div>
-  <div class="sidebar flex">
-    <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""><b class="text-gray-500 text-xs  pr-12"> Chatbot Companion for mental wellness and support.</b></i></a>
+
+  <div class="sidebar fixed flex z-100">
+    <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt="Profle Pic"><b class="text-md text-white pr-12"> &nbsp; &nbsp; Chatbot</b></i></a>
+    
     <div class="fixed top-2 right-4 z-50">
       <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
     </div>
   </div>
+
+  <img class="w-full h-full fixed object-cover top-0 -z-20 " src="/images/profile/profile-top.png" alt="Profile image">
 
   <div class="flex flex-col items-center justify-center w-screen min-h-screen  text-gray-800 mt-10">
     <!-- Component Start -->
@@ -111,14 +115,13 @@
       </div>
 
       <!-- input box  -->
-      <div class="flex w-full mb-20 fixed bottom-0 px-4 items-center">
+      <div class="flex w-full fixed bottom-[6.3rem] px-4 items-center">
 
         <input id="inputbox"
-          class="raleway w-2/3 mx-2 flex items-center h-10 border-2 border-orange-300 w-full rounded-full px-3 text-sm"
+          class="raleway mx-2 flex items-center h-10 border-2 w-full rounded-full px-3 text-sm"
           type="text" placeholder="Type your message…">
 
-
-        <img class="w-8 h-8 text-gray-500" id="sendBtn" src="/images/send.png" alt="Send Button">
+          <i id="sendBtn" class="fa-solid fa-location-arrow text-[2rem]" style="color: #ffffff;"></i>
 
       </div>
 
