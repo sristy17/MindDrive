@@ -181,34 +181,50 @@
 
       <%- include('../includes/navbar') %>
       <script>
-        // there was some issue with external js i couldn't determine but inline script works well
         const body = document.getElementById('profilepage');
         const button = document.getElementById('theme-toggle');
-        
-        // Function to get the currently visible form
-        const getCurrentForm = () => {
-          const signupForm = document.getElementById('signupForm');
-          const signInForm = document.getElementById('signInForm');
-          return window.getComputedStyle(signupForm).display !== "none" ? signupForm : signInForm;
-        };
-        
+
         button.addEventListener('click', () => {
-          const form = getCurrentForm(); // Dynamically find the active form
+          const signUpForm = document.getElementById('signupForm');
+          const signInForm = document.getElementById('signInForm');
 
           if (body.classList.contains('light-theme')) {
             body.classList.remove('light-theme');
             body.classList.add('dark-theme');
-            form.classList.remove('bg-slate-200', 'text-black');
-            form.classList.add('bg-gray-800', 'text-white');
+
+            // Update both forms
+            [signUpForm, signInForm].forEach(form => {
+              form.classList.remove('bg-slate-200', 'text-black');
+              form.classList.add('bg-gray-800', 'text-white');
+            });
+
             button.innerHTML = '<i class="fas fa-sun"></i>';
           } else {
             body.classList.remove('dark-theme');
             body.classList.add('light-theme');
-            form.classList.remove('bg-gray-800', 'text-white');
-            form.classList.add('bg-slate-200', 'text-black');
-            button.innerHTML = '<i class="fas fa-moon"></i>'; 
+
+            // Update both forms
+            [signUpForm, signInForm].forEach(form => {
+              form.classList.remove('bg-gray-800', 'text-white');
+              form.classList.add('bg-slate-200', 'text-black');
+            });
+
+            button.innerHTML = '<i class="fas fa-moon"></i>';
           }
         });
+        const toggleForms = (showSignUp) => {
+        const signUpForm = document.getElementById('signupForm');
+        const signInForm = document.getElementById('signInForm');
+
+          if (showSignUp) {
+            signUpForm.style.display = 'block';
+            signInForm.style.display = 'none';
+          } else {
+            signUpForm.style.display = 'none';
+            signInForm.style.display = 'block';
+          }
+        };
+
       </script>
       <!-- <script src="/public/js/profile.js"></script> -->
         <!-- handeling form data -->
