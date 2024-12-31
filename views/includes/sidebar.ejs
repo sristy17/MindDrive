@@ -1,4 +1,4 @@
-<div class="sidebar flex justify-between items-center" style="z-index: 100">
+<div class="flex ml-4 mt-1 justify-between items-center" style="z-index: 100">
   <div>
     <a href="/profile">
       <img
@@ -7,17 +7,16 @@
         alt=""
       />
     </a>
-
   </div>
   <!-- Check if the user is logged in by checking if req.session.user exists -->
  <% if (typeof user !== 'undefined') { %>
-  <div class="mr-8 mt-2">
+  <div class="mr-8 mt-2 font-semibold">
     <button id="logout-btn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
+        width="33"
         height="30"
-        fill="currentColor"
+        fill="white"
         class="bi bi-box-arrow-left"
         viewBox="0 0 16 16"
       >
