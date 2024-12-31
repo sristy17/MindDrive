@@ -74,6 +74,7 @@ html {
 
 .navbar {
   display: flex;
+  z-index: 1000;
   justify-content: space-around;
   align-items: center;
   position: fixed;
@@ -99,23 +100,19 @@ html {
   font-size: 12px;
 }
 
-/* .navbar a {
-  color: #3f3f3c;
-  text-decoration: none;
-  padding: 10px;
-  flex: 1;
-  text-align: center;
-} */
+.navbar a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 #navicon {
   margin-top: .25rem;
   margin-bottom: .25rem;
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
-
-
-/*--animation--part--*/
 
 /*--animation--part--*/
 .image-animation {
@@ -319,7 +316,7 @@ html {
 .intro{
 padding: 30px 5px 0px;
 text-align: center;
-/* margin-top: 30px; */
+margin-top: 30px;
 }
 
 .mood h2{
@@ -350,6 +347,7 @@ font-family: "Raleway", sans-serif;
 .anxiety{
   /* margin-bottom: 32px; */
   background-image: url("../images/Bg1.png");
+  object-fit: cover;
   /* background-repeat: no-repeat; */
   background-image: cover;
   /* height: 390px;  */
@@ -362,6 +360,7 @@ font-family: "Raleway", sans-serif;
 }
 .depression{
   background-image: url("../images/Bg2.png");
+  object-fit: cover;
   background-repeat: no-repeat;
   background-image: cover;
   height:340px;
@@ -371,6 +370,7 @@ font-family: "Raleway", sans-serif;
 }
 .stress{
   background-image: url("../images/Bg3.png");
+  object-fit: cover;
   background-repeat: no-repeat;
   background-image: cover;
   height:300px; 
@@ -380,6 +380,7 @@ font-family: "Raleway", sans-serif;
 }
 .ptsd{
   background-image: url("../images/Bg4.png");
+  object-fit: cover;
   background-repeat: no-repeat;
   background-image: cover;
   height: 320px; 
@@ -392,16 +393,19 @@ font-family: "Raleway", sans-serif;
 .feat-h{
   padding: 50px 50px 10px;
 }
+
 .feat-p {
-  padding: 24px 22px 0px;
-  font-size: 0.8rem;
+  padding: 10px 12px 0 12px;
+  font-size: 1rem;
   font-family: "Raleway", sans-serif;
 }
+
 .feat-a{
   text-decoration: none !important;
   margin: 50px;
-  padding: 20px 30px  0px;
+  padding: 24px 24px;
 }
+
 .quotes{
   padding: 50px 30px 10px;
   margin-bottom: 150px;
@@ -424,7 +428,7 @@ textarea:focus, input:focus{
 .loader {
   width: 60px;
   aspect-ratio: 4;
-  --c:#df135c 90%,#0000;
+  --c:#fff 90%,#0000;
   background: 
     radial-gradient(circle closest-side at left  4px top 50%,var(--c)),
     radial-gradient(circle closest-side                     ,var(--c)),

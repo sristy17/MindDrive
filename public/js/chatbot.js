@@ -62,13 +62,13 @@ const botmessage = async (message) => {
     const container = createMessageContainer('flex w-full mt-2 space-x-3 max-w-xs');
 
     const avatarDiv = document.createElement('div');
-    avatarDiv.className = 'flex-shrink-0 h-10 w-10 rounded-full bg-gray-300';
+    avatarDiv.className = 'flex-shrink-0 h-10 w-10 rounded-full z-10 bg-white';
     const avatarImg = createAvatarImg('rounded-full', '/images/bot.png');
     avatarDiv.appendChild(avatarImg);
 
     const innerDiv = document.createElement('div');
 
-    const messageDiv = createMessageDiv('bg-gray-300 p-3 rounded-r-lg rounded-bl-lg');
+    const messageDiv = createMessageDiv('bg-white p-3 rounded-r-lg z-10 rounded-bl-lg');
     const messageP = document.createElement('p');
     messageP.className = 'text-sm';
 
@@ -108,7 +108,7 @@ const createMessageDiv = (className) => {
 
 const createTimestampSpan = (text) => {
     const timeSpan = document.createElement('span');
-    timeSpan.className = 'text-xs text-gray-500 leading-none';
+    timeSpan.className = 'text-xs z-10 text-white text-bold leading-none';
     timeSpan.textContent = text;
     return timeSpan;
 }
