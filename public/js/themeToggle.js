@@ -26,4 +26,6 @@ function themeToggle(theme) {
     body.classList.add('light-theme');
     button.innerHTML = '<i class="fas fa-moon"></i>'; // Change icon for light theme
   }
+  
 }
+
