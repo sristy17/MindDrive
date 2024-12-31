@@ -84,36 +84,41 @@
         <img class="w-full h-1/2 absolute top-0 -z-20 rounded-br-[6rem] rounded-bl-[6rem]"
             src="/images/profile/profile-top.png" alt="Profile image">
 
-        <img class="relative bottom-[13rem] w-24 h-24 rounded-full" src="/images/avatar.jpg" alt="">
+        <div class="flex flex-col w-full items-center justify-center absolute bottom-[18%] gap-5">
+            <img class="relative w-24 h-24 rounded-full" src="/images/avatar.jpg" alt="">
 
-        <div class="bg-white rounded-2xl relative p-2 w-1/2 bottom-[12rem] text-center">
-            <span id="user-info"></span>
-        </div>
-
-        <div class="bg-white w-4/5 py-4 absolute bottom-[18%] border-2 rounded-3xl">
-            <div class="flex justify-center items-center flex-col">
-                <span class="py-1 font-semibold"> 250 points</span>
-                <span class="text-gray-500 text-sm">+20 Since Last Week</span>
+            <div class="bg-white rounded-2xl relative p-2 w-1/2 text-center">
+                <span id="user-info"></span>
             </div>
 
-            <div class="flex items-center justify-center my-3">
-                <svg width="100" height="100" viewBox="0 0 250 250" class="circular-progress">
-                    <circle class="bg"></circle>
-                    <circle class="fg"></circle>
-                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#e01c8f" font-size="45"
-                        font-weight="bold">
-                        80%
-                    </text>
-                </svg>
-            </div>
+            <div class="bg-white w-4/5 py-4 border-2 rounded-3xl">
 
-            <div class="text-center text-sm px-3 w-full text-gray-500">You explored 80% of the self-help resource! Keep Pushing :)</div>
+                <div class="flex justify-center items-center flex-col">
+                    <span class="py-1 font-semibold"> 250 points</span>
+                    <span class="text-gray-500 text-sm">+20 Since Last Week</span>
+                </div>
 
-            <div class="flex flex-col px-3 py-3 w-full">
-                <span class="py-1 ">
-                    <i class="fa-solid fa-calendar-days text-[1.6rem]"></i>
-                    <span class="pl-4">Joined on 12/05/2024</span>
-                </span>
+                <div class="flex items-center justify-center my-3">
+                    <svg width="100" height="100" viewBox="0 0 250 250" class="circular-progress">
+                        <circle class="bg"></circle>
+                        <circle class="fg"></circle>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#e01c8f"
+                            font-size="45" font-weight="bold">
+                            80%
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="text-center text-sm px-3 w-full text-gray-500">You explored 80% of the self-help resource!
+                    Keep Pushing :)</div>
+
+                <div class="flex flex-col px-3 py-3 w-full">
+                    <span class="py-1 ">
+                        <i class="fa-solid fa-calendar-days text-[1.6rem]"></i>
+                        <span class="pl-4">Joined on 12/05/2024</span>
+                    </span>
+                </div>
+
             </div>
         </div>
     </div>
@@ -121,4 +126,5 @@
 <script>
     document.getElementById("user-info").innerText = localStorage.getItem("userData");
 </script>
+
 </html>
