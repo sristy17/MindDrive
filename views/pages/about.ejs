@@ -63,44 +63,56 @@
     </div>
   </div>
   <div class="sidebar flex">
-    <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
+    <a href="/profile" class="z-50 fixed top-0"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
     <div class="fixed top-2 right-4 z-50">
       <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
     </div>
   </div>
 
-  <div class="main raleway px-6 pt-8 pb-24">
-    <div class="flex items-center justify-center py-6 text-3xl font-bold raleway">
-      Mind Drive
-    </div>
-    <div class="center">
-      <img class="w-2/3" src="/images/about-hero.png" alt="no image" />
-    </div>
-    <div class="text-lg py-4 text-center">
-      <b>Welcome to Mind Drive</b>, <br />Your dedicated companion on your journey towards mental well-being.
-    </div>
-    <div class="">
-      <span class="text-lg flex items-center font-bold justify-center py-2">What do you get here?</span>
-      <ul class="list-disc pl-4 py-4">
-        <li>Explore personalized pathways, engage in mindfulness practices.</li>
-        <li>Track your progress, and discover expert insights tailored to your needs.</li>
-      </ul>
+  <img class="w-full h-1/2 absolute top-0 z-20 rounded-br-[6rem] rounded-bl-[6rem]" src="/images/profile/profile-top.png" alt="Profile image">
 
-      <div class="flex items-center justify-center">
-        Whether you're seeking calm, clarity, or connection, Mind Drive is here to guide you every step of the way.
-        Together, let's drive towards a healthier mind and a brighter tomorrow.
+
+  <div class="bg-[#ffb3f3] -z-40 h-screen w-full flex flex-col items-center justify-center">
+
+    <div class="raleway z-20">
+      <div class="mx-4 rounded-3xl ">
+
+        <div class="flex items-center text-white justify-center py-3 text-3xl font-bold raleway">
+          Mind Drive
+        </div>
+
+        <div class="center">
+          <img class="w-2/3" src="/images/about-hero.png" alt="no image" />
+        </div>
+
+        <div class="text-lg rounded-3xl bg-white py-4 text-center ">
+          <b>Welcome to Mind Drive</b>, <br />
+          <span class="text-gray-600 text-[1rem]">
+            Your dedicated companion on your journey towards mental well-being.
+          </span>
+        </div>
+
       </div>
-    </div>
 
-    <div class="text-sm items-center justify-center flex flex-col mt-8">
-      Copyright © 2024. All rights reserved.
-      <br>Sristy Paul & Pooranjoy Bhattacharya
+      <div class="bg-white mx-4 my-6 py-3 px-4 mb-12 rounded-3xl -z-40">
+
+        <span class="text-lg flex items-center font-bold justify-center py-1">What do you get here?</span>
+
+        <ul class="list-disc pl-4 py-3">
+          <li>Explore personalized pathways, engage in mindfulness practices.</li>
+          <li>Track your progress, and discover expert insights tailored to your needs.</li>
+        </ul>
+
+        <div class="flex items-center justify-center">
+          Whether you're seeking calm, clarity, or connection, Mind Drive is here to guide you every step of the way.
+          Together, let's drive towards a healthier mind and a brighter tomorrow.
+        </div>
+      </div>
+
     </div>
   </div>
 
   <%- include('../includes/navbar') %>
-
-
 </body>
 
 <script src="/js/themeToggle.js"></script>
