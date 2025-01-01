@@ -87,96 +87,92 @@
 
     <div class="content">
       <% if (typeof user=='undefined' ) { %>
-        <div class="sidebar flex">
+        <div class="sidebar flex fixed w-full" style="z-index: 100;">
           <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt=""></i></a>
           <div class="fixed top-2 right-4 z-50">
             <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
           </div>
         </div>
-        <% } %>
+      <% } %>
 
       <% if (typeof user !=='undefined' ) { %>
         <%- include('../includes/sidebar') %>
       <% } %>
 
 
-      <div class="flex h-screen">
-
-        <% if (typeof user=='undefined' ) { %>
+      <% if (typeof user=='undefined' ) { %>
+        <div class="bg-[#ffb3f3] h-screen flex items-center justify-center w-full">
+          <img class="w-full h-1/2 absolute top-0 z-10 rounded-br-[6rem] rounded-bl-[6rem]"
+            src="/images/profile/profile-top.png" alt="Profile image">
+          
           <!------------------------------- user-signup--------------------------- -->
+          <form id="signupForm" method="post" class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md z-10">
+            <h2 class="text-2xl font-semibold text-center mb-2">Sign Up</h2>
+            <p class="text-center text-sm text-green-600 mb-4">
+              Already have account
+              <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">Sign In</a>
+            </p>
 
-          <div class="flex items-center justify-center w-full">
+            <!-- Username Input -->
+            <div class="mb-6">
+              <label for="username" class="block text-gray-700 font-semibold mb-2">Username</label>
+              <input type="text" id="username" name="username"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
+                placeholder="Enter your username" />
+            </div>
 
+            <!-- Password Input -->
+            <div class="mb-6">
+              <label for="password" class="block text-gray-700 font-semibold mb-2">Password</label>
+              <input type="password" id="password" name="password"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
+                placeholder="Enter your password" />
 
-            <form id="signupForm" method="post" class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md">
-              <h2 class="text-2xl font-semibold text-center mb-2">Sign Up</h2>
-              <p class="text-center text-sm text-green-600 mb-4">
-                Already have account
-                <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">Sign In</a>
-              </p>
+            </div>
 
-              <!-- Username Input -->
-              <div class="mb-6">
-                <label for="username" class="block text-gray-700 font-semibold mb-2">Username</label>
-                <input type="text" id="username" name="username"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
-                  placeholder="Enter your username" />
-              </div>
+            <!-- Submit Button -->
+            <button type="submit"
+              class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50">
+              Submit
+            </button>
+          </form>
 
-              <!-- Password Input -->
-              <div class="mb-6">
-                <label for="password" class="block text-gray-700 font-semibold mb-2">Password</label>
-                <input type="password" id="password" name="password"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
-                  placeholder="Enter your password" />
+          <!------------------------------- user-signin--------------------------- -->
+          <form id="signInForm" method="post" class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md z-10"
+            style="display: none">
 
-              </div>
+            <h2 class="text-2xl font-semibold text-center mb-2">Sign In</h2>
+            <p class="text-center text-sm text-green-600 mb-4">
+              Don't have account
+              <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">SignUp</a>
+            </p>
 
-              <!-- Submit Button -->
-              <button type="submit"
-                class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50">
-                Submit
-              </button>
-            </form>
+            <!-- Username Input -->
 
-            <!------------------------------- user-signin--------------------------- -->
-            <form id="signInForm" method="post" class="bg-white shadow-lg rounded-lg p-8 w-[80%] max-w-md"
-              style="display: none">
+            <div class="mb-4">
+              <label for="signIn-username" class="block text-gray-700 font-medium mb-2">Enter
+                Username:</label>
+              <input type="text" id="signIn-username" name="username"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
+                placeholder="Enter your username" />
+            </div>
 
-              <h2 class="text-2xl font-semibold text-center mb-2">Sign In</h2>
-              <p class="text-center text-sm text-green-600 mb-4">
-                Don't have account
-                <a href="#" class="underline" style="color: #0000ee" onclick="toggleForm()">SignUp</a>
-              </p>
+            <!-- Password Input -->
+            <div class="mb-6">
+              <label for="signIn-password" class="block text-gray-700 font-medium mb-2">Enter
+                Password:</label>
+              <input type="password" id="signIn-password" name="password"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
+                placeholder="Enter your password" />
+            </div>
 
-              <!-- Username Input -->
-
-              <div class="mb-4">
-                <label for="signIn-username" class="block text-gray-700 font-medium mb-2">Enter
-                  Username:</label>
-                <input type="text" id="signIn-username" name="username"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
-                  placeholder="Enter your username" />
-              </div>
-
-              <!-- Password Input -->
-              <div class="mb-6">
-                <label for="signIn-password" class="block text-gray-700 font-medium mb-2">Enter
-                  Password:</label>
-                <input type="password" id="signIn-password" name="password"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
-                  placeholder="Enter your password" />
-              </div>
-
-              <!-- Submit Button -->
-              <button type="submit"
-                class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50">
-                Submit
-              </button>
-            </form>
-          </div>
-      </div>
-
+            <!-- Submit Button -->
+            <button type="submit"
+              class="w-full bg-[#7C3AED] text-white py-3 rounded-lg font-semibold hover:ring-opacity-80 active:bg-[#4C1D95] hover:shadow-lg transition-all duration-300 focus:ring-4 focus:ring-purple-300 focus:ring-opacity-50">
+              Submit
+            </button>
+          </form>
+        </div>
       <% } %>
 
       <% if (typeof user !=='undefined' ) { %>
