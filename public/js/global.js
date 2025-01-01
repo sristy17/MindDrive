@@ -86,7 +86,7 @@ toggleButton.addEventListener('click', () => {
 const themeToggleButton = document.getElementById('ToggleButton');
 const body1 = document.querySelector('#body2');
 const anxietyElements = document.querySelectorAll('.anxiety'); // Select all elements with the class 'anxiety'
-
+const modalbackground = document.querySelector('.modal');
 // Check if there's a saved theme in localStorage and apply it
 const savedTheme = localStorage.getItem('theme');
 
@@ -107,24 +107,32 @@ function applyTheme(theme) {
     if (theme === 'dark') {
         body1.style.backgroundColor = '#1a202c';
         body1.style.color = 'white';
+        modal.style.color = 'white';
         themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
 
         // Apply the greyish background to all .anxiety elements
         anxietyElements.forEach(element => {
             element.style.backgroundImage = 'url(../images/greyish-bg.png)'; // Greyish background for dark theme
         });
-
+        modalbackground.style.backgroundImage = 'url(../images/greyish-bg.png)'; 
+        modalbackground.style.width= '70vw';
+        modalbackground.style.height = 'auto';    
+        modalbackground.style.backgroundSize = 'cover'; 
         localStorage.setItem('theme', 'dark');
     } else {
         body1.style.backgroundColor = 'white';
         body1.style.color = 'black';
+        modal.style.color = 'black';
         themeToggleButton.innerHTML = '<i class="fas fa-moon"></i>';
 
         // Apply the light background to all .anxiety elements
         anxietyElements.forEach(element => {
             element.style.backgroundImage = 'url(../images/Bg1.png)'; // Light background for light theme
         });
-
+        modalbackground.style.backgroundImage = 'url(../images/Bg1.png)'; // Greyish background for dark theme
+        modalbackground.style.width= '70vw';
+        modalbackground.style.height = 'auto'; 
+        modalbackground.style.backgroundSize = 'cover';
         localStorage.setItem('theme', 'light');
     }
 }
