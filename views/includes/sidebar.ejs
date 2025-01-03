@@ -38,7 +38,7 @@
 <script>
     document.getElementById("logout-btn").addEventListener("click", async () => {
         try {
-            const res = await fetch("http://localhost:8000/auth/logout", {
+            const res = await fetch("/auth/logout", {
                 method: "POST"
             });
             if (res.ok) {
