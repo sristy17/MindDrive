@@ -96,19 +96,19 @@
     </div>
   </div>
 
-  <div class="sidebar fixed flex z-100">
+  <div class="sidebar fixed flex z-[100] top-0 left-0 right-0 bg-gradient-to-b from-black/50 to-transparent ">
     <a href="/profile"> <img class="w-12 rounded-full" src="/images/avatar.jpg" alt="Profle Pic"><b class="text-md text-white pr-12"> &nbsp; &nbsp; Chatbot</b></i></a>
     
-    <div class="fixed top-2 right-4 z-50">
+    <div class="fixed top-2 right-4 ">
       <button id="theme-toggle" class="bg-blue-600 text-white p-2 rounded"> <i class="fas fa-moon"></i> </button>
     </div>
   </div>
 
   <img class="w-full h-full fixed object-cover top-0 -z-20 " src="/images/profile/profile-top.png" alt="Profile image">
 
-  <div class="flex flex-col items-center justify-center w-screen min-h-screen  text-gray-800 mt-10">
+  <div class="flex flex-col w-screen h-screen">
     <!-- Component Start -->
-    <div class="flex flex-col flex-grow w-full shadow-xl rounded-lg overflow-hidden">
+    <div class="flex flex-col flex-grow w-full shadow-xl rounded-lg overflow-hidden pt-20">
       <div class="flex flex-col flex-grow h-0 p-4 overflow-auto mb-32">
         <div class="raleway" id="message-container"></div>
         <div id="loader" class="loader" style="display:none;"></div>
