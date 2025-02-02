@@ -62,7 +62,7 @@ const botmessage = async (message) => {
     const container = createMessageContainer('flex w-full mt-2 space-x-3 max-w-xs');
 
     const avatarDiv = document.createElement('div');
-    avatarDiv.className = 'flex-shrink-0 h-10 w-10 rounded-full z-10 bg-white';
+    avatarDiv.className = 'flex-shrink-0 h-10 w-10 rounded-full bg-white';
     const avatarImg = createAvatarImg('rounded-full', '/images/bot.png');
     avatarDiv.appendChild(avatarImg);
 
