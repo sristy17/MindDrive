@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { MONGODB_URI } from "../config/db.conf.js";
-
 const connectDatabase = () => {
     mongoose.set('strictQuery', false);
     mongoose.connect(MONGODB_URI);
