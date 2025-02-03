@@ -31,8 +31,7 @@ const trackMood = async (req, res) => {
       return res.status(400).json({ error: 'Scale value is required' });
     }
 
-    const mood = getMood(scale)
-
+    const mood = getMood(scale);
     const requestData = {
       contents: [
         {
@@ -45,11 +44,15 @@ const trackMood = async (req, res) => {
       ]
     };
 
-    const response = await axios.post(`${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`, requestData, {
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await axios.post(
+      `${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`,
+      requestData,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }
-    });
+    );
 
     res.json(response.data.candidates[0].content.parts[0].text);
   } catch (error) {
@@ -66,38 +69,53 @@ const getTasks = async (req, res) => {
       return res.status(400).json({ error: 'Scale value is required' });
     }
 
-    const mood = getMood(scale)
-
+    const mood = getMood(scale);
     const requestData = {
       contents: [
         {
           parts: [
             {
-              text: `Today I'm in ${mood} mood, Generate 3 tasks that I can do according to my mood to improve them. Just 1 line each tasks. Give them in HTML paragram tags so that i can directly render them in webpage. No need to write entire html only 3 <p> tags with content.`
+              text: `Today I'm in ${mood} mood, Generate 3 tasks that I can do according to my mood to improve them. Just 1 line each task. Give them in HTML paragraph tags so that I can directly render them on the webpage. No need to write entire HTML, only 3 <p> tags with content.`
             }
           ]
         }
       ]
     };
 
-    const response = await axios.post(`${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`, requestData, {
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await axios.post(
+      `${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`,
+      requestData,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }
-    });
+    );
 
     res.json(response.data.candidates[0].content.parts[0].text);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred while fetching the diagnosis' });
   }
-}
+};
 
 const botresponse = async (req, res) => {
   try {
     const { message } = req.body;
+
     if (!message) {
       return res.status(400).json({ error: 'Message value is required' });
+    }
+
+    if (!req.session.messages) {
+      req.session.messages = [];
+    }
+
+    req.session.messages.push({ text: message, timestamp: new Date() });
+    let historyText = req.session.messages.map(msg => msg.text).join('\n');
+
+    if (req.session.messages.length === 1) {
+      historyText = `Restrict responses to mental health related questions only. For any other query, respond with "Please ask me a mental health related question, I am sworn to serve MindDrive.". Here is my question: ${message}`;
     }
 
     const requestData = {
@@ -105,24 +123,28 @@ const botresponse = async (req, res) => {
         {
           parts: [
             {
-              text: `Restrict responses to mental health related questions only. For any other query, respond with "Please ask me a mental health related question, I am sworn to serve MindDrive.". Here is my question : ${message}`
+              text: historyText
             }
           ]
         }
       ]
     };
 
-    const response = await axios.post(`${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`, requestData, {
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await axios.post(
+      `${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`,
+      requestData,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }
-    });
+    );
 
     res.json(response.data.candidates[0].content.parts[0].text);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred while fetching the diagnosis' });
   }
-}
+};
 
 export { trackMood, getTasks, botresponse };
