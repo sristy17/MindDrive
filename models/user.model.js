@@ -27,8 +27,7 @@ const userSchema = new mongoose.Schema({
     },
     age: {
         type: Number,
-        required: true,
-        set: (dob) => calculateAge(dob), 
+        // Removed required constraint
     },
     gender: {
         type: String,
@@ -42,7 +41,15 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: false,
     },
-}, { timestamps: true }); 
+}, { timestamps: true });
+
+// Pre-save hook to calculate age
+userSchema.pre('save', function(next) {
+    if (this.dob) {
+        this.age = calculateAge(this.dob);
+    }
+    next();
+});
 
 const User = mongoose.model('User', userSchema);
 
