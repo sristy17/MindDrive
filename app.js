@@ -4,6 +4,7 @@ import authRoutes from './routes/auth.routes.js';
 import geminiRoutes from './routes/gemini.routes.js';
 import connectDatabase from './database/Mongo.database.js';
 import sessions from 'express-session';
+import User from './models/user.model.js';
 
 const app = express();
 
@@ -47,8 +48,14 @@ app.get('/chatbot', (req, res) => {
     res.render('pages/chatbot',{user : req.session.existingUser});
 });
 
-app.get('/profile', (req, res) => {
-    res.render('pages/profile',{user : req.session.existingUser});
+app.get('/profile', async (req, res) => {
+    if (req.session.existingUser) {
+        const user = await User.findOne({ username: req.session.existingUser.username });
+        console.log(user);
+        res.render('pages/profile', { user });
+    } else {
+        res.render('pages/profile', { user: null });
+    }
 });
 
 app.get('/signup',(_,res) => {
