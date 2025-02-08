@@ -18,16 +18,18 @@
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "connect-flash": "^0.1.1",
     "cors": "^2.8.5",
     "cz-git": "^1.10.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^4.19.2",
-    "express-session": "^1.18.0",
+    "express-session": "^1.18.1",
     "method-override": "^3.0.0",
     "mongodb": "^6.8.0",
-    "mongoose": "^8.4.4"
+    "mongoose": "^8.4.4",
+    "passport": "^0.7.0"
   },
   "config": {
     "commitizen": {

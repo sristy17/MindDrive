@@ -9,12 +9,7 @@ function toggleForm() {
       : "none";
 }
 
-const signupForm = document.getElementById("signupForm");
-const signInForm = document.getElementById("signInForm");
-
-
 signupForm.addEventListener("submit", async (e) => {
-  console.log(e);
   e.preventDefault();
 
   const formData = new FormData(signupForm);
@@ -28,35 +23,31 @@ signupForm.addEventListener("submit", async (e) => {
       },
     });
     const data = await res.json();
-    console.log(data);
-    if (res.ok) {
-      Toastify({
-        text: "user Registered",
-        className: "info",
-        style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-      }).showToast();
-    } else {
-      Toastify({
-        text: data.message,
-        className: "error",
-        style: {
-          background: "linear-gradient(to right, red, red)",
-        },
-      }).showToast();
+
+    Toastify({
+      text: data.message,
+      className: res.ok ? "info" : "error",
+      style: {
+        background: res.ok ? "linear-gradient(to right, #00b09b, #96c93d)" : "linear-gradient(to right, red, red)",
+      },
+    }).showToast();
+
+    // Redirect if signup is successful
+    if (res.ok && data.redirect) {
+      setTimeout(() => {
+        window.location.href = data.redirect;
+      }, 1000);
     }
   } catch (error) {
     console.error(error.message);
     Toastify({
-      text: "something went wrong while registering user",
-      className: "info",
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
+      text: "Something went wrong while registering user",
+      className: "error",
+      style: { background: "linear-gradient(to right, red, red)" },
     }).showToast();
   }
 });
+
 
 signInForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -71,36 +62,37 @@ signInForm.addEventListener("submit", async (e) => {
         "Content-Type": "application/x-www-form-urlencoded",
       },
     });
+
     const data = await res.json();
-    localStorage.setItem("userData",data.user.username)
     if (res.ok) {
+      localStorage.setItem("userData", data.user.username);
+
       Toastify({
-        text: "User Successfully LogedIn!",
+        text: "User Successfully Logged In!",
         className: "info",
         style: {
           background: "linear-gradient(to right, #00b09b, #96c93d)",
         },
       }).showToast();
 
-      setTimeout(()=>{window.location.href = "/"}, 1000);
-      
+      // Redirect after showing toast
+      setTimeout(() => {
+        window.location.href = data.redirect;
+      }, 1000);
     } else {
       Toastify({
-        text: "Invalid Credentials",
+        text: data.message || "Invalid Credentials",
         className: "error",
-        style: {
-          background: "linear-gradient(to right, red, red)",
-        },
+        style: { background: "linear-gradient(to right, red, red)" },
       }).showToast();
     }
   } catch (error) {
     console.error(error.message);
     Toastify({
-      text: "something went wrong while signin the user",
-      className: "info",
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
+      text: "Something went wrong while signing in the user",
+      className: "error",
+      style: { background: "linear-gradient(to right, red, red)" },
     }).showToast();
   }
 });
+

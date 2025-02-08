@@ -77,7 +77,85 @@
   <!-- Tailwind css cdn  -->
   <script src="https://cdn.tailwindcss.com"></script>
   </head>
+  <style>
+    .circular-progress {
+        --size: 30px;
+        --half-size: calc(var(--size) / 2);
+        --stroke-width: 20px;
+        --radius: calc((var(--size) - var(--stroke-width)) / 2);
+        --circumference: calc(var(--radius) * pi * 2);
+        --dash: calc((var(--progress) * var(--circumference)) / 100);
+        animation: progress-animation 5s linear 0s 1 forwards;
+    }
 
+    .circular-progress circle {
+        cx: var(--half-size);
+        cy: var(--half-size);
+        r: var(--radius);
+        stroke-width: var(--stroke-width);
+        fill: none;
+        stroke-linecap: round;
+    }
+
+    .circular-progress circle.bg {
+        stroke: #ddd;
+    }
+
+    .circular-progress circle.fg {
+        transform: rotate(-90deg);
+        transform-origin: var(--half-size) var(--half-size);
+        stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+        transition: stroke-dasharray 0.3s linear 0s;
+        stroke: #e01c8f;
+    }
+
+    @property --progress {
+        syntax: "<number>";
+        inherits: false;
+        initial-value: 0;
+    }
+
+    @keyframes progress-animation {
+        from {
+            --progress: 0;
+        }
+
+        to {
+            --progress: 80;
+        }
+    }
+
+    .circular-progress {
+        --size: 250px;
+        --half-size: calc(var(--size) / 2);
+        --stroke-width: 20px;
+        --radius: calc((var(--size) - var(--stroke-width)) / 2);
+        --circumference: calc(var(--radius) * pi * 2);
+        --dash: calc((var(--progress) * var(--circumference)) / 100);
+        animation: progress-animation 2s linear 0s 1 forwards;
+    }
+
+    .circular-progress circle {
+        cx: var(--half-size);
+        cy: var(--half-size);
+        r: var(--radius);
+        stroke-width: var(--stroke-width);
+        fill: none;
+        stroke-linecap: round;
+    }
+
+    .circular-progress circle.bg {
+        stroke: #ddd;
+    }
+
+    .circular-progress circle.fg {
+        transform: rotate(-90deg);
+        transform-origin: var(--half-size) var(--half-size);
+        stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+        transition: stroke-dasharray 0.3s linear 0s;
+        stroke: #e01c8f;
+    }
+</style>
   <body>
 
     <div class="desktop-message">
@@ -215,7 +293,59 @@
       <% } %>
 
       <% if (typeof user !=='undefined' ) { %>
-        <%- include('../pages/user') %>
+        <div class="h-screen bg-[#ffb3f3] w-full flex flex-col items-center justify-center">
+          <img class="w-full h-1/2 absolute top-0 z-10 rounded-br-[6rem] rounded-bl-[6rem]"
+              src="/images/profile/profile-top.png" alt="Profile image">
+
+          <div class="flex z-20 flex-col w-full items-center justify-center absolute bottom-[18%] gap-5">
+              <img class="relative w-24 h-24 rounded-full" src="/images/avatar.jpg" alt="">
+
+              <div class="bg-white rounded-2xl relative p-2 w-1/2 text-center">
+                  <span id="user-info"><%= user.username %></span>
+              </div>
+
+              <div class="bg-white w-4/5 py-4 border-2 rounded-3xl">
+
+                  <div class="flex justify-center items-center flex-col">
+                      <span class="py-1 font-semibold"> 250 points</span>
+                      <span class="text-gray-500 text-sm">+20 Since Last Week</span>
+                  </div>
+
+                  <div class="flex items-center justify-center my-3">
+                    <svg width="100" height="100" viewBox="0 0 250 250" class="circular-progress">
+                        <circle class="bg"></circle>
+                        <circle class="fg"></circle>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#e01c8f"
+                            font-size="45" font-weight="bold">
+                            80%
+                        </text>
+                    </svg>
+                </div>
+                  <div class="text-center text-sm px-3 w-full text-gray-500">You explored 80% of the self-help resource!
+                      Keep Pushing :)</div>
+
+                  <div class="flex flex-col px-3 py-3 w-full">
+                      <span class="py-1 ">
+                          <i class="fa-solid fa-calendar-days text-[1.6rem]"></i>
+                          <span class="pl-4">Joined on <%= user.createdAt.toDateString() %></span>
+                      </span>
+                      <span class="py-1 ">
+                          <i class="fa-solid fa-user text-[1.6rem]"></i>
+                          <span class="pl-4">Full Name: <%= user.fullName %></span>
+                      </span>
+                      <span class="py-1 ">
+                          <i class="fa-solid fa-calendar text-[1.6rem]"></i>
+                          <span class="pl-4">Age: <%= user.age %></span>
+                      </span>
+                      <span >
+                          <i class="fa-solid fa-venus-mars text-[1.6rem]"></i>
+                          <span class="pl-2">Gender: <%= user.gender %></span>
+                      </span>
+                  </div>
+
+              </div>
+          </div>
+      </div>
       <% } %>
 
       <%- include('../includes/navbar') %>

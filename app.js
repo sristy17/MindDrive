@@ -48,16 +48,15 @@ app.get('/chatbot', (req, res) => {
     res.render('pages/chatbot',{user : req.session.existingUser});
 });
 
+// Profile route
 app.get('/profile', async (req, res) => {
-    if (req.session.existingUser) {
-        const user = await User.findOne({ username: req.session.existingUser.username });
-        console.log(user);
-        res.render('pages/profile', { user });
-    } else {
-        res.render('pages/profile', { user: null });
-    }
+  if (req.session.existingUser) {
+      const user = await User.findOne({ username: req.session.existingUser.username });
+      res.render('pages/profile', { user });
+  } else {
+    res.render('pages/profile',{user : req.session.existingUser});
+  }
 });
-
 app.get('/signup',(_,res) => {
     res.render('pages/profile')
 });
