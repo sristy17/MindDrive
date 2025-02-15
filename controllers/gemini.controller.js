@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { GEMINI_API_ENDPOINT, GEMINI_API_KEY } from '../config/keys.conf.js';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { getBotPrompt } from '../utils/bot.js';
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
@@ -109,21 +110,27 @@ const botresponse = async (req, res) => {
 
     if (!req.session.messages) {
       req.session.messages = [];
+      req.session.sentGreeting = false; 
+    }
+
+    if (!req.session.sentGreeting) {
+      req.session.messages.push({ text: "Hello! I'm MindGuide, your dedicated mental health companion. Feel free to share your thoughts, and I'll be here to support you." });
+      req.session.sentGreeting = true; 
     }
 
     req.session.messages.push({ text: message, timestamp: new Date() });
-    let historyText = req.session.messages.map(msg => msg.text).join('\n');
 
-    if (req.session.messages.length === 1) {
-      historyText = `Restrict responses to mental health related questions only. For any other query, respond with "Please ask me a mental health related question, I am sworn to serve MindDrive.". Here is my question: ${message}`;
-    }
+    let historyText = req.session.messages.map(msg => msg.text).join('\n');
+    console.log(historyText);
+
+    const prompt = getBotPrompt(message, historyText);
 
     const requestData = {
       contents: [
         {
           parts: [
             {
-              text: historyText
+              text: `${prompt}\n\nConversation history:\n${historyText}`
             }
           ]
         }
@@ -143,8 +150,9 @@ const botresponse = async (req, res) => {
     res.json(response.data.candidates[0].content.parts[0].text);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'An error occurred while fetching the diagnosis' });
+    res.status(500).json({ error: 'An error occurred while fetching the response' });
   }
 };
+
 
 export { trackMood, getTasks, botresponse };
