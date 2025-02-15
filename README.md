@@ -1,6 +1,12 @@
-# MindDrive - AI Powered Mental Wellbeing PWA
+## MindDrive - AI Powered Mental Wellbeing PWA
 
-![image](https://github.com/user-attachments/assets/a88c7f43-333c-4f46-8248-252f0ddc87fc)
+<div align="center">
+  
+![image](https://github.com/user-attachments/assets/1c0e910c-7b8d-45a8-9237-4fe5d9962848)
+
+
+</div>
+
 
 ## Table of Contents
 
