@@ -70,6 +70,18 @@ GEMINI_API_KEY=<gemini-api-key>
 ```bash
 npm run dev
 ```
+## Docker
+Make sure you have docker installed on your machine.
+
+Add .env file to the MindDrive folder with the following content given above.
+
+Run the following command to start the application.
+
+```bash
+
+ docker build -t mindrive . && docker run -p 8000:8000 --env-file .env mindrive
+
+```
 
 ## Folder Structure
 
