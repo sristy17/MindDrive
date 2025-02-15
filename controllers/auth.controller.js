@@ -1,54 +1,71 @@
 import User from '../models/user.model.js';
 import bcrypt from 'bcrypt';
+import { z } from 'zod';
+import { userSignupSchema } from '../utils/validator.js';
+import { userSigninSchema } from '../utils/validator.js';
 
 const signup = async (req, res) => {
-    const { username, password, dob, gender, fullName, phoneNumber } = req.body;
-
     try {
-        if (!username || !password || !dob || !gender || !fullName || !phoneNumber) {
-            return res.status(500).json({ message: "Invalid body params" });
-        }
+        const validatedData = userSignupSchema.parse(req.body);
 
-        const existingUser = await User.findOne({ username });
+        const existingUser = await User.findOne({ username: validatedData.username });
         if (existingUser) {
-            return res.status(400).json({ message: 'User already exists' });
+            return res.status(400).json({ message: "User already exists" });
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({ username, password: hashedPassword, dob, gender, fullName, phoneNumber });
+        const hashedPassword = await bcrypt.hash(validatedData.password, 10);
+        const newUser = new User({ ...validatedData, password: hashedPassword });
 
         await newUser.save();
-        
-        res.status(201).json({ message: 'User created successfully', data: newUser });
+        res.status(201).json({ message: "User created successfully", data: newUser });
     } catch (error) {
-        res.status(500).json({ message: 'Server error', error });
+        if (error instanceof z.ZodError) {
+            const formattedErrors = error.errors.map(err => ({
+                field: err.path[0],  
+                msg: err.message     
+            }));
+    
+            return res.status(400).json({
+                message: formattedErrors[0].msg,
+                errors: formattedErrors
+            });
+        }
+        res.status(500).json({ message: "Server error", error });
     }
 };
 
 const signin = async (req, res) => {
-    const { username, password } = req.body;
-    
-
     try {
-        if (!username || !password) return res.status(500).json({ message: "Invalid body params" })
+        const validatedData = userSigninSchema.parse(req.body);
+        console.log("validatedData", validatedData);
+        const { username, password } = validatedData;
 
         const existingUser = await User.findOne({ username });
-        
         if (!existingUser) {
-            return res.status(400).json({ message: 'User does not exist' });
+            return res.status(400).json({ message: "User does not exist" });
         }
 
         const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
         if (!isPasswordCorrect) {
-            return res.status(400).json({ message: 'Invalid credentials' });
+            return res.status(400).json({ message: "Invalid credentials" });
         }
 
-        //store user info in the session
-        req.session.existingUser = {username : existingUser.username}
-
-        res.status(200).json({ message: 'Signin successful', user: existingUser });
+        req.session.existingUser = existingUser;
+        res.status(200).json({ message: "Signin successful", user: existingUser });
     } catch (error) {
-        res.status(500).json({ message: 'Server error', error });
+        if (error instanceof z.ZodError) {
+            console.log("error", error.errors);
+            const formattedErrors = error.errors.map(err => ({
+                field: err.path[0],  
+                msg: err.message     
+            }));
+            console.log("formattedErrors", formattedErrors);
+            return res.status(400).json({
+                message: formattedErrors.msg,
+                errors: formattedErrors
+            });
+        }
+        res.status(500).json({ message: "Server error", error });
     }
 };
 
