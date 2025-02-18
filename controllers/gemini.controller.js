@@ -2,6 +2,7 @@ import axios from 'axios';
 import { GEMINI_API_ENDPOINT, GEMINI_API_KEY } from '../config/keys.conf.js';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { getBotPrompt } from '../utils/bot.js';
+import redisClient from '../config/redis.config.js';
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
@@ -24,7 +25,7 @@ function getMood(moodValue) {
   }
 }
 
-const trackMood = async (req, res) => {
+const trackMood = async (req, res) => { 
   try {
     const { scale } = req.body;
 
@@ -33,29 +34,41 @@ const trackMood = async (req, res) => {
     }
 
     const mood = getMood(scale);
-    const requestData = {
-      contents: [
-        {
-          parts: [
+    const cacheKey = `mood_${scale}`;
+
+    redisClient.get(cacheKey, async (err, cachedData) => {
+      if (err) {
+        console.error('Redis GET error:', err);
+      }
+      if (cachedData) {
+        return res.json(JSON.parse(cachedData));
+      } else {
+        const requestData = {
+          contents: [
             {
-              text: `Today I'm in ${mood} mood, tell me something to cheer me up in 3-4 lines!`
+              parts: [
+                {
+                  text: `Today I'm in ${mood} mood, tell me something to cheer me up in 3-4 lines!`
+                }
+              ]
             }
           ]
-        }
-      ]
-    };
+        };
 
-    const response = await axios.post(
-      `${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`,
-      requestData,
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        const response = await axios.post(
+          `${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`,
+          requestData,
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        );
+
+        redisClient.setex(cacheKey, 3600, JSON.stringify(response.data.candidates[0].content.parts[0].text));
+        res.json(response.data.candidates[0].content.parts[0].text);
       }
-    );
-
-    res.json(response.data.candidates[0].content.parts[0].text);
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred while fetching the diagnosis' });
@@ -71,29 +84,41 @@ const getTasks = async (req, res) => {
     }
 
     const mood = getMood(scale);
-    const requestData = {
-      contents: [
-        {
-          parts: [
+    const cacheKey = `tasks_${scale}`;
+
+    redisClient.get(cacheKey, async (err, cachedData) => {
+      if (err) {
+        console.error('Redis GET error:', err);
+      }
+      if (cachedData) {
+        return res.json(JSON.parse(cachedData));
+      } else {
+        const requestData = {
+          contents: [
             {
-              text: `Today I'm in ${mood} mood, Generate 3 tasks that I can do according to my mood to improve them. Just 1 line each task. Give them in HTML paragraph tags so that I can directly render them on the webpage. No need to write entire HTML, only 3 <p> tags with content.`
+              parts: [
+                {
+                  text: `Today I'm in ${mood} mood, Generate 3 tasks that I can do according to my mood to improve them. Just 1 line each task. Give them in HTML paragraph tags so that I can directly render them on the webpage. No need to write entire HTML, only 3 <p> tags with content.`
+                }
+              ]
             }
           ]
-        }
-      ]
-    };
+        };
 
-    const response = await axios.post(
-      `${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`,
-      requestData,
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        const response = await axios.post(
+          `${GEMINI_API_ENDPOINT}?key=${GEMINI_API_KEY}`,
+          requestData,
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        );
+
+        redisClient.setex(cacheKey, 3600, JSON.stringify(response.data.candidates[0].content.parts[0].text));
+        res.json(response.data.candidates[0].content.parts[0].text);
       }
-    );
-
-    res.json(response.data.candidates[0].content.parts[0].text);
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'An error occurred while fetching the diagnosis' });
@@ -153,6 +178,5 @@ const botresponse = async (req, res) => {
     res.status(500).json({ error: 'An error occurred while fetching the response' });
   }
 };
-
 
 export { trackMood, getTasks, botresponse };

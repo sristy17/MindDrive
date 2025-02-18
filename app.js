@@ -5,7 +5,16 @@ import geminiRoutes from './routes/gemini.routes.js';
 import connectDatabase from './database/Mongo.database.js';
 import sessions from 'express-session';
 
+const express = require('express');
+const redisClient = require('./config/redis.config');
+
 const app = express();
+
+// Ensure Redis client connects successfully
+redisClient.on('connect', () => {
+  console.log('Connected to Redis');
+});
+
 
 app.use(
     sessions({
